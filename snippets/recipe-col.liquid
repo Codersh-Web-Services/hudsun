@@ -1,0 +1,34 @@
+<div class="prod-wrap text-center">
+    <a href="{{ article.url }}">
+        <div class="featured-recipe-tag">
+            <p>Featured Recipe</p>
+        </div>
+        {% unless article.image == blank %}
+          <div class="thumb-container">
+            <div class="article__featured-image-link bg-inline" style="background-image:url('{{ article.image | img_url: '400x400' }}');">
+          </div>
+        {% endunless %}
+    </a>
+
+    <div class="blog-body text-center">
+    	<div data-mh="desc-body-wocta">
+			
+            <h4 data-mh="prod-title">
+                <a href="{{ article.url }}">{{ article.title }}</a>
+            </h4>
+
+			{% if article.metafields.blog_recipe.total_time != blank %}
+			  <p class="prep-time">Total Time: {{article.metafields.blog_recipe.total_time}}</p>
+			{% endif %}
+
+            {% comment %}
+            <div class="article-content">
+              {{ article_content | strip_html | truncatewords: 30 }}
+            </div>
+            {% endcomment %}
+        </div>
+        <div class="cta mt-3">
+          <a href="{{ article.url }}" class="btn">Read more</a>
+        </div>
+    </div>
+</div>

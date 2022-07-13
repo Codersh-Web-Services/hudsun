@@ -1,0 +1,80 @@
+<section class="lp-pecans">
+	<div class="container-fluid">
+		<div class="row align-items-center">	
+			{% if section.settings.sec_reverse == true  %}
+			<div class="col-lg-6 order-2 order-md-2 p-0">
+			{% else %}
+			<div class="col-lg-6 p-0">
+			{% endif %}
+				<div class="lp-img-col">
+	              <div class="bg-inline" style="background-image: url({{ section.settings.pec_img | img_url: '' }});"></div>
+
+	              <div class="img-caption">
+	                <p>{{ section.settings.capt }}</p>
+	              </div>
+	            </div>
+			</div>
+			{% if section.settings.sec_reverse == true  %}
+			<div class="col-lg-6 order-1 order-md-1 p-0">
+			{% else %}
+			<div class="col-lg-6 p-0">
+			{% endif %}
+				<div class="lp-content-wrap">
+				  <h2>{{ section.settings.title }}</h2>
+				  <p>{{ section.settings.desc }}</p>
+				  {% assign count = 0 %}
+				  {% for product in collections.all.products %}
+				  	{% assign count = count | plus: 1 %}
+				    {% if section.settings.product_handle == product.handle %}
+				      <div class="single-prod-inner">
+				        {% include 'lp-featured-product' %}
+				      </div>
+				    {% endif %}
+				  {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% schema %}
+  {
+  	"name": "Holiday Recipe 1",
+    "settings": [
+    	{
+		   "type":      "header",
+		   "content":   "Section Settings"
+		},
+		{
+		  "type": "text",
+		  "id": "title",
+		  "label": "Title"
+		},
+		{
+		  "type": "textarea",
+		  "id": "desc",
+		  "label": "Description"
+		},
+		{
+		  "type": "product",
+		  "id": "product_handle",
+		  "label": "Choose Featured Product" 
+		},
+		{
+		  "type": "image_picker",
+		  "id": "pec_img",
+		  "label": "Image"
+		},
+		{
+		  "type": "richtext",
+		  "id": "capt",
+		  "label": "Image Caption"
+		},
+		{
+			"type": "checkbox",
+			"id": "sec_reverse",
+			"label": "Reverse Column"
+		}
+	]
+  }
+{% endschema %}

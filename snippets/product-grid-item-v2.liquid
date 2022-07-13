@@ -1,0 +1,216 @@
+{%- assign featured_image = product.featured_media.preview_image %}
+{%- assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+{% assign sold_out = true %}
+{% if product.available %}
+  {% assign sold_out = false %}
+{% endif %}
+      <div class="product-tile-grid product-cont {% if sold_out %}is-sold-out{% endif %}">
+          <div class="prod-wrap text-center">
+            <a class="custom-fly" href="{{ product.url }}?variant={{ current_variant.id }}">
+              {% if sold_out %}
+                <div class="grid-product__sold-out">
+                  <p>{{ 'products.product.sold_out_html' | t }}</p>
+                </div>
+              {% elsif on_sale %}
+                <div class="grid-product__on-sale">
+                  {% capture saved_amount %}{{ product.compare_at_price | minus: product.price | money }}{% endcapture %}
+                  <p>{{ 'products.general.save_html' | t: saved_amount: saved_amount }}</p>
+                </div>
+              {% endif %}
+
+                  <img class="grid-product__image" src="{{ featured_image.src | img_url: '360x' }}" alt="{{ featured_image.alt | escape }}">
+
+              </a>
+
+            <h4 data-mh="prod-title">
+              <a href="{{ product.url }}?variant={{ current_variant.id }}">{{ product.title }}</a>
+
+              {% if product.metafields.prod_prep.total_time != blank %}
+                <p class="prep-time">Total Time: {{product.metafields.prod_prep.total_time}}</p>
+              {% endif %}
+            </h4>
+            <div class='opinew-stars-plugin-product-list'>{% render 'opinew_review_stars_lists' product:product %}</div>
+            {% comment %}
+            {% render 'bv-inline-ratings', product: product %}
+           
+
+            <p data-mh="prod-desc">{{product.metafields.prod_desc.short_prod}}</p>
+            {% endcomment %} 
+            
+            {% if product.metafields.prod_desc.short_prod != blank %}
+            <p data-mh="prod-desc">{{product.metafields.prod_desc.short_prod}}</p>
+            {% else %}
+            {% comment %}
+            <p data-mh="prod-desc" class="prod-indesc">{{ product.description | strip_html | truncatewords: 13 }}</p>
+            {% endcomment %} 
+            {% endif %}
+
+            <div class="container-fluid inner-wrap">
+              <div class="row align-items-center mt-4">
+                <div class="col-6 p-0">
+                  <div class="price">
+                      <span class="price-wrap">
+                        <span class="grid-product__price fl-top">
+                          {% if on_sale %}
+                            <span id="ComparePrice" class="product-single__price--compare-at">{{ product.compare_at_price | money }}</span>
+                            <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+                          {% else %}
+                             <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                          {% endif %}
+                          {% if product.price_varies %}
+                            {{ product.price_min | money }} - {{ product.price_max | money }}
+                            {% comment %}
+                            <span class="icon-fallback-text">
+                              <span class="icon icon-plus grid-product__price-min" aria-hidden="true"></span>
+                              <span class="fallback-text">+</span>
+                            </span>
+                            {% endcomment %}
+                          {% else %}
+                            {{ product.price | money }}
+                          {% endif %}
+                        </span>
+
+                        {%- if product.price_varies == false and variant.unit_price_measurement -%}
+                          {%- capture unit_price_separator -%}
+                            <span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+                          {%- endcapture -%}
+
+                          {%- capture unit_price_base_unit -%}
+                            <span>
+                              {%- if variant.unit_price_measurement.reference_value != 1 -%}
+                                {{- variant.unit_price_measurement.reference_value -}}
+                              {%- endif -%}
+                              {{ variant.unit_price_measurement.reference_unit }}
+                            </span>
+                                {%- endcapture -%}
+                                <span class="product-unit-price">
+                                  <span class="visually-hidden">{{ 'products.general.unit_price' | t }}</span>
+                                  <span>{{ variant.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
+                                </span>
+                              {%- endif -%}
+                          </span>
+                  </div>
+                </div>
+                <div class="col-6 p-0">
+
+                  {% if product.available and product.variants.size > 1  %}
+                    <div class="cta">
+                      <a href="#" onclick="triggerINIT{{count}}()" data-toggle="modal" data-target="#prod-modal-{{count}}" class="btn">Add to cart</a>
+                    </div>
+                  {% else %}
+                  
+                    {% include 'drawer-button-single-quick' %}
+                  {% endif %}
+                  
+                </div>
+              </div>
+
+            </div>
+          </div>
+      </div>
+
+
+      <!-- Quick Look Modal-->
+      <div class="modal fade prod-modal-custom" id="prod-modal-{{count}}" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+
+            <div class="modal-body">
+
+              <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+
+              <span class="custom-close-modal" data-dismiss="modal" aria-label="Close"></span>
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="custom-fly modal-prod-main-image">
+                      {% if sold_out %}
+                        <div class="grid-product__sold-out">
+                          <p>{{ 'products.product.sold_out_html' | t }}</p>
+                        </div>
+                      {% elsif on_sale %}
+                        <div class="grid-product__on-sale">
+                          {% capture saved_amount %}{{ product.compare_at_price | minus: product.price | money }}{% endcapture %}
+                          <p>{{ 'products.general.save_html' | t: saved_amount: saved_amount }}</p>
+                        </div>
+                      {% endif %}
+
+                          {% include 'owl-thumbail' %}
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <h3>{{ product.title }}</h3>
+                    {% comment %}
+                    {% render 'bv-inline-ratings', product: product %}
+                    {% endcomment %}
+
+                    <div class="price">
+
+                      <span class="price-wrap">
+                        <span class="grid-product__price fl-right">
+                          {% if on_sale %}
+                            <span id="ComparePrice" class="product-single__price--compare-at">{{ product.compare_at_price | money }}</span>
+                            <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+                          {% else %}
+                             <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                          {% endif %}
+                          {% if product.price_varies %}
+                            
+                            <span class="tprice">
+                            {{ current_variant.price | money}}
+                            </span>
+                            {% comment %}
+                            <span class="icon-fallback-text">
+                              <span class="icon icon-plus grid-product__price-min" aria-hidden="true"></span>
+                              <span class="fallback-text">+</span>
+                            </span>
+                            {% endcomment %}
+                          {% else %}
+                            {{ product.price | money }}
+                          {% endif %}
+                        </span>
+
+                        {%- if product.price_varies == false and variant.unit_price_measurement -%}
+                          {%- capture unit_price_separator -%}
+                            <span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+                          {%- endcapture -%}
+
+                          {%- capture unit_price_base_unit -%}
+                            <span>
+                              {%- if variant.unit_price_measurement.reference_value != 1 -%}
+                                {{- variant.unit_price_measurement.reference_value -}}
+                              {%- endif -%}
+                              {{ variant.unit_price_measurement.reference_unit }}
+                            </span>
+                                {%- endcapture -%}
+                                <span class="product-unit-price">
+                                  <span class="visually-hidden">{{ 'products.general.unit_price' | t }}</span>
+                                  <span>{{ variant.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
+                                </span>
+                              {%- endif -%}
+                          </span>
+                    </div>
+                    <div class="full-desc">
+                      {% comment %}
+                        {{ product.metafields.prod_desc.short_prod | strip_html }}
+                      {% endcomment %}
+                      {{ product.description }}
+                    </div>
+                    {% include 'drawer-button-tile-custom' %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>

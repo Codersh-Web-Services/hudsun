@@ -1,0 +1,46 @@
+<section class="sign-up">
+  <div class="container">
+    <div class="text-center">
+      <div class="hero-content">
+        <h2>{{ section.settings.signup_text }}</h2>
+  
+
+        <div class="form-group">
+          <input type="tel" placeholder="Phone Number">  
+          <div class="cta">
+            <a href="{{ section.settings.signup_cta_link }}" class="btn">{{ section.settings.signup_cta_text}}</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Sign up",
+    "settings": [
+{"type" : "text",
+"id" : "signup_text",
+"label" : "Sign up Title"
+},
+{"type" : "text",
+"id" : "signup_cta_text",
+"label" : "Sign up cta text"
+}
+,
+{"type" : "url",
+"id" : "signup_cta_link",
+"label" : "signup cta link "
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

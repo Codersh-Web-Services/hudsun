@@ -1,0 +1,61 @@
+<div class="sec-titleb text-center">
+  <div class="fl-wrap">
+    <h3>{{section.settings.sec_heading}}</h3>
+  </div>
+</div>
+<section class="find-a-store-section">
+	<div class="container-fluid">
+		<div class="row align-items-center">
+			{% for block in section.blocks %}
+        <div class="col-6 col-md-3 col-xl mb-5">
+          <div class="brand-wrap d-flex align-items-center" data-mh="brand-logo">
+            {% if block.settings.store_link %}
+              <a href="{{block.settings.store_link}}" target="_blank">
+                <img src="{{ block.settings.store_image | img_url:'160x' }}" class="img-fluid">
+              </a>
+            {% else %}
+              <img src="{{ block.settings.store_image | img_url:'160x' }}" class="img-fluid">
+            {% endif %}
+            
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+	</div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Store Finder",
+    "settings": [
+      {
+  		   "type":      "header",
+  		   "content":   "Sections"
+  		},
+  	  {
+        "type": "text",
+        "id": "sec_heading",
+        "label": "Sections Heading" 
+      }
+    ],
+    "blocks": [
+      {
+        "type": "store_finder",
+        "name": "Stores",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "store_image",
+            "label": "Store Logo"
+          }
+          // {
+          //   "type": "url",
+          //   "id": "store_link",
+          //   "label": "Store Link"
+          // }
+        ]
+      }
+    ]
+  }
+{% endschema %}

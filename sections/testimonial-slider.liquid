@@ -1,0 +1,98 @@
+<section class="testimonial-slider">
+	<h2 class="text-center mb-5">{{ section.settings.sec_heading }}</h2>
+	
+	<div class="row">
+		<div class="col-12">
+			<div class="twrap">
+				{% for block in section.blocks %}
+				<div class="blue-trans">
+					<div class="container-fluid">
+						<div class="align-items-center justify-content-center">
+							<div class="text-center">
+								<div class="tcontent text-center">
+									<p class="slide-text">
+									{{block.settings.slide_content}}</p>
+									<div class="author">
+										<p class="text-center">- {{ block.settings.slide_author }}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+				{% endfor %}
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+<div class="float-img">
+  <img src="https://cdn.shopify.com/s/files/1/0277/0118/2512/files/leaves-flip.png?v=1621433774">
+</div>
+
+<script>
+	$(document).ready(function(){
+	  $(".testimonial-slider .twrap").slick({
+	  	adaptiveHeight: true,  
+	  	fade: true,
+	    dots: true, 
+	    autoplay:false, 
+	    autoplaySpeed:5000, //  Slide Delay
+	    speed:800, // Transition Speed
+	    slidesToShow:1, // Number Of Carousel
+	    slidesToScroll:1, // Slide To Move 
+	    pauseOnHover:false,
+	    arrows: true,
+	    prevArrow:"<button aria-label='slider prev button' type='button' class='slick-prev pull-left'><span class='arrow-left'></span></button>",
+        nextArrow:"<button aria-label='slider next button' type='button' class='slick-next pull-right'><span class='arrow-right'></span></button>",
+        responsive: [
+		    {
+		      breakpoint: 576,
+		      settings: {
+		        dots: true,
+		        arrows: false
+		      }
+		    }
+		  ]
+	  })
+	})
+</script>
+
+
+{% schema %}
+  {
+  	"name": "Testimonials",
+    "settings": [
+    	{
+		   "type":      "header",
+		   "content":   "Testimonial Slider"
+		},
+        {
+			"type": "text",
+			"id": "sec_heading",
+			"label": "Section Heading"
+	    }
+    ],
+    "blocks": [
+      {
+        "type": "testimonial_slides",
+        "name": "Testimonial Slides",
+        "settings": [
+	        {
+				"type": "textarea",
+				"id": "slide_content",
+				"label": "Testimonial Content"
+		    },
+		    {
+				"type": "text",
+				"id": "slide_author",
+				"label": "Author"
+		    }
+        ]
+      }
+    ]
+  }
+{% endschema %}

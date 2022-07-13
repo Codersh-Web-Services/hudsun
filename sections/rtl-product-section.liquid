@@ -1,0 +1,64 @@
+<div class="rtl-product-section">
+	<div class="right-left-image reverse" style="background-color: {{ section.settings.ltl_bg_color }}; ">
+	    <div class="container-fluid">
+	      <div class="row align-items-center">
+	        <div class="col-md-5 p-0 mimg-bg" style="background-image:url('{{ section.settings.ltl_bg_image | img_url: '' }}');">
+
+	        </div>
+	        <div class="col-md-7 p-0">
+	            {% if section.settings.ltl_image != blank %}
+	              <div class="mcontent" style="background-image:url('{{ section.settings.ltl_image | img_url: '' }}');">
+	            {% else %}
+	              <div class="mcontent">
+	            {% endif %}
+
+	            <div class="lwrap">
+	              <h3>{{section.settings.ltl_heading}}</h3>
+	              <p>{{section.settings.ltl_content}}</p>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Left to Right",
+    "settings": [
+    {
+       "type":      "header",
+       "content":   "Right to Left Image"
+    },
+    {
+      "type": "text",
+      "id": "ltl_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "ltl_content",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "ltl_image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "ltl_bg_image",
+      "label": "BG Image"
+    },
+    {
+      "type": "color",
+      "id": "ltl_bg_color1",
+      "label": "BG Color"
+    }
+    ]
+  }
+{% endschema %}

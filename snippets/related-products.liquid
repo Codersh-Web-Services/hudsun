@@ -1,0 +1,24 @@
+<!-- /snippets/related-products.liquid -->
+<div class="default-collection col-temp">
+  <div class="four-col-prod custom">
+    <div class="container product-inner-wrap">
+      <h2 class="text-center mb-0">{{ section.settings.related_title }}</h2>
+      <div class="row">
+            <div class="col-12 new-col">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="custom-width">
+                      {% for product in collections.home-featured-products.products limit:3 %}
+                        <div class="col-sm-6 col-lg-4">
+                          {% include 'product-tile-item-custom' %}
+                        </div>
+                      {% endfor %}
+                    </div>
+                    
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

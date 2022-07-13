@@ -1,0 +1,109 @@
+{% if section.blocks.size > 0 %}
+<section class="two-sec-bg position-relative">
+	<div class="container-fluid">
+    {% assign count = 0 %}
+    {% for block in section.blocks %}
+    {% assign count = count | plus: 1 %}
+
+    {% assign mod = forloop.index | modulo: 2 %}
+
+    {% if mod == 0 %}
+  		<div class="row align-items-center">
+            <div class="col-lg-6 cten order-2 p-0 order-lg-1">
+              <div class="ctent-wrap"> 
+                <h2>{{block.settings.sec_heading}}</h2>
+                <p>{{block.settings.sec_desc}}</p>
+                {% if block.settings.cta_text != blank %}
+                <div class="cta">
+                  <a href="{{block.settings.cta_link}}" class="btn">
+                    {{block.settings.cta_text}}
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-lg-6 p-0 order-1 order-lg-2">
+              <img src="{{block.settings.Sec_bg | img_url:''}}" class="img-fluid" alt="{{block.settings.Sec_bg.alt | escape }}">
+            </div>
+      </div>
+    {% else %}
+      <div class="row align-items-center">
+            <div class="col-lg-6 p-0">
+              <img src="{{block.settings.Sec_bg | img_url:''}}" class="img-fluid" alt="{{block.settings.Sec_bg.alt | escape }}">
+            </div>
+            <div class="col-lg-6 cten p-0">
+              <div class="ctent-wrap"> 
+                <h2>{{block.settings.sec_heading}}</h2>
+                <p>{{block.settings.sec_desc}}</p>
+                {% if block.settings.cta_text != blank %}
+                <div class="cta">
+                  <a href="{{block.settings.cta_link}}" class="btn">
+                    {{block.settings.cta_text}}
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+      </div>
+    {% endif %}
+    {% endfor %}
+	</div>
+
+  <div class="float-img">
+    <img src="https://cdn.shopify.com/s/files/1/0277/0118/2512/files/leaves.png?v=1621262471">
+  </div>
+
+</section>
+{% endif %}
+
+<style type="text/css">
+  .two-sec-bg {
+    background-color: #f4f1f000;
+  }
+</style>
+
+{% schema %}
+  {
+  	"name": "Our Story",
+    "settings": [
+    	{
+  		   "type":      "header",
+  		   "content":   "Sections Settings"
+  		}
+    ],
+
+    "blocks": [
+    {
+      "type": "text_block",
+      "name": "Add Section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "Sec_bg",
+          "label": "Section Image"
+        },
+        {
+          "type": "text",
+          "id": "sec_heading",
+          "label": "Sections Title"
+        },
+        {
+          "type": "textarea",
+          "id": "sec_desc",
+          "label": "Sections Description"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA link"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}

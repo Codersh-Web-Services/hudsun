@@ -1,0 +1,79 @@
+<section class="default-page-wrap">
+    <div class="dpw-header" style="background-image:url('{{ section.settings.hero_back_img | img_url: '' }}');">
+      	<div class="container-fluid">
+	        <div class="row">
+	          <div class="col-12">
+	            {% if section.settings.ov_title != blank  %}
+	               <h1>{{ section.settings.ov_title }}</h1>
+	            {% else %}
+	              <h1>{{ page.title }}</h1>
+	            {% endif %}
+	            
+	          </div>
+	        </div>
+      	</div>
+  	</div>
+
+      {% if section.settings.dark_bg != blank  %}
+        <style type="text/css">
+          .dpw-header:before {
+            content: '';
+            background-color: #000;
+            opacity: .{{ section.settings.opacity_value }};
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        </style>
+      {% endif %}
+
+	  <div class="dpw-body benefits-body">
+	    <div class="container">
+	      <div class="col-12">
+	        <p>{{ page.content }}</p>
+	      </div>
+	    </div>
+	  </div>
+
+</section>
+
+
+{% schema %}
+  {
+    "name": "Edit Page",
+    "settings": [
+      {
+       "type":      "header",
+       "content":   "Section Settings"
+	  },
+	  {
+	  "type": "image_picker",
+	  "id": "hero_back_img",
+	  "label": "Hero Background Image"
+	  },
+	  {
+	    "type": "text",
+	    "id": "ov_title",
+	    "label": "Override Title"
+	  },
+	  {
+	    "type": "checkbox",
+	    "id": "dark_bg",
+	    "label": "Enable Overlay"
+	  },
+	  {
+	    "type": "range",
+	    "id": "opacity_value",
+	    "label": "Opacity",
+	    "unit": "%",
+	    "step": 1,
+	    "default": 40,
+	    "min": 0,
+	    "max": 100
+	  }
+
+    ]
+  }
+{% endschema %}

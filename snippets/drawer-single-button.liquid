@@ -1,0 +1,120 @@
+{%- assign product = all_products[block.settings.product_handle] -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+{%- if product == empty -%}
+  {%- assign section_onboarding = true -%}
+  {%- assign vendor = 'home_page.onboarding.product_vendor' | t -%}
+  {%- assign title = 'home_page.onboarding.product_title' | t -%}
+  {%- assign compare_at_price = 2999 -%}
+  {%- assign price = 1999 -%}
+{%- else -%}
+  {%- assign section_onboarding = false -%}
+  {%- assign vendor = product.vendor -%}
+  {%- assign title = product.title -%}
+  {%- assign compare_at_price = current_variant.compare_at_price -%}
+  {%- assign price = current_variant.price -%}
+{%- endif -%}
+
+{%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
+<div itemscope itemtype="http://schema.org/Product" id="FeaturedProductSection--{{ section.id }}-{{ count }}"
+  data-section-id="{{ section.id }}-{{ count }}"
+  data-section-type="product-template"
+  data-enable-history-state="false"
+  data-featured-product="true"
+  {% if first_3d_model %}data-has-model="true"{% endif %}>
+  <div class="no-variant">
+    {% if product.variants.size != 1 %}
+      <p>Click "learn more" to see additional sizes.</p>
+    {% endif %}
+  </div>
+  <div class="">
+
+
+    <div class="">
+      {% comment %}
+        <h2 itemprop="name" class="d-none">{{ product.title }}</h2>
+      {% endcomment %}
+        <div class="custom-drawer-button" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+          <meta itemprop="price" content="{{ product.price | money_without_currency }}">
+          <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+          <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+          {% if section_onboarding %}
+            <div class="product-single__add-to-cart default-product">
+              <button type="submit" name="add" id="AddToCart--{{ section.id }}-{{ count }}" class="btn btn--add-to-cart" disabled="disabled">
+                <span class="btn__text">
+                  {{ 'products.product.sold_out' | t }}
+                </span>
+              </button>
+            </div>
+          {% else %}
+            {% capture "form_classes" %}
+              product-single__form{% if product.has_only_default_variant %} product-single__form--no-variants{% endif %}
+            {%- endcapture %}
+
+            {% capture "form_id" %}AddToCartForm--{{ section.id }}-{{ count }}{%- endcapture %}
+
+            {% form 'product', product, id:form_id, data-product-form: '' %}
+              <select name="id" aria-label="variant select" id="ProductSelect--{{ section.id }}-{{ count }}" class="product-single__variants no-js">
+                {% for variant in product.variants %}
+                  {% if variant.available %}
+                    <option {% if variant == product.selected_or_first_available_variant %}
+                      selected="selected" {% endif %}
+                      data-sku="{{ variant.sku }}"
+                      value="{{ variant.id }}">
+                      {{ variant.title }} - {{ variant.price | money_with_currency }}
+                    </option>
+                  {% else %}
+                    <option disabled="disabled">
+                      {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                    </option>
+                  {% endif %}
+                {% endfor %}
+              </select>
+
+              <div class="prod-cart">
+                <div class="container">
+                    <div class="row">
+     
+                        <div class="prod-btn-wrap mr-3"> 
+                          <button onclick="triggerCM('prod-modal-{{count}}')" type="submit" name="add" id="AddToCart--{{ section.id }}-{{ count }}" class="btn"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
+                            <span class="btn__text">
+                              {% if current_variant.available %}
+                                {{ 'products.product.add_to_cart' | t }}
+                              {% else %}
+                                {{ 'products.product.sold_out' | t }}
+                              {% endif %}
+                            </span>
+                        </button> 
+                        </div>
+
+                    </div> 
+                </div>
+                
+            
+                 
+              </div>
+            {% endform %}
+          {% endif %}
+        </div>
+
+       
+    </div>
+
+  </div>
+</div>
+{% unless product.empty == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}-{{ count }}">
+    {{ product | json }}
+  </script>
+  <script type="application/json" id="ModelJson-{{ section.id }}-{{ count }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+{% endunless %}
+
+<script type="text/javascript">
+  function triggerCM(data) {
+    $('#'+data).modal('hide');
+  }
+</script>

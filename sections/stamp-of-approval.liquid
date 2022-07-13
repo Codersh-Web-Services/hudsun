@@ -1,0 +1,76 @@
+<section >
+  <div class="container">
+    <div class="text-center">
+      <div class="intro-content">
+        <h2>{{ section.settings.main_hero_text }}</h2>
+        <p>{{ section.settings.main_hero_decription }}</p>
+
+        <div class="logos">
+          <img src="{{section.settings.logo1 | img_url : "master" }}" alt="{{section.settings.logo1.alt }}">
+          <img src="{{section.settings.logo2 | img_url : "master" }}" alt="{{section.settings.logo2.alt }}">
+          <img src="{{section.settings.logo3 | img_url : "master" }}" alt="{{section.settings.logo3.alt }}">
+          <img src="{{section.settings.logo4 | img_url : "master" }}" alt="{{section.settings.logo4.alt }}">
+        </div>
+      </div>
+
+    </div>
+    
+    <h2 class="text-center"> {{ section.settings.main_hero_text2 }} </h2>
+    <!-- Put this wherever you would like your player to appear --> 
+    <img style="width: 100%; margin: auto; display: block; margin-left: 20px; margin-bottom: 20px; float: right;" class="vidyard-player-embed" src="https://play.vidyard.com/LSXSzr7WbqGeeFdSFuYEXy.jpg" data-uuid="LSXSzr7WbqGeeFdSFuYEXy" data-v="4" data-type="inline" />
+<!--      <video width="800" height="800" controls>
+  <source src="{{section.settings.video_url}}" type="video/mp4"> -->
+<!--  
+  Your browser does not support the video tag.
+</video>  -->
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Stamp of approval",
+"settings": [
+{
+"type": "textarea",
+"id": "main_hero_text",
+"label": "Hero Heading"
+},
+{
+"type": "textarea",
+"id": "main_hero_decription",
+"label": "Hero Sub heading"
+},
+{
+"type": "image_picker",
+"id": "logo1",
+"label": "benefit 1"
+},
+{
+"type": "image_picker",
+"id": "logo2",
+"label": "benefit 2"
+},
+{
+"type": "image_picker",
+"id": "logo3",
+"label": "benefit 3"
+},
+{
+"type": "image_picker",
+"id": "logo4",
+"label": "benefit 4"
+},
+{
+"type": "textarea",
+"id": "main_hero_text2",
+"label": "Hero Heading 2"
+},
+{
+"type": "text",
+"id": "video_url",
+"label": "Video Link"
+}
+]
+}
+{% endschema %}
+

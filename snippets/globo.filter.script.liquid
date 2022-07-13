@@ -1,0 +1,67 @@
+{{ 'v5.globo.filter.css' | asset_url | stylesheet_tag }}
+<script>
+{%- assign assets_url = 'product-1.png' | asset_img_url: '50x' | split: 'product-1_50x.png' -%}
+{%- assign files_url  = 'product-1.png' | file_img_url: '50x' | split: 'product-1_50x.png' -%}
+  window.moneyFormat = "{{ shop.money_format | replace: '"', "'" }}";
+  window.GloboMoneyFormat = "{{ shop.money_format | replace: '"', "'" }}";
+  window.shopCurrency = "{{ shop.currency }}";
+  window.isMultiCurrency = {% assign is_multicurrency = shop.enabled_currencies | size %}{% if is_multicurrency > 1 and true %}true{% else %}false{% endif %};
+  window.assetsUrl = '{{ assets_url[0] }}';
+  window.filesUrl = '{{ files_url[0] }}';
+  var page_id = {% if template contains 'collection' %}{% if collection.handle == 'all' %}1{% else %}{{collection.id | default: 1}}{% endif %}{% elsif template contains 'search' %}2{% else %}0{% endif %};
+  var GloboFilterConfig = {
+    api: {
+      filterUrl: "https://filter-v6.globosoftware.net/filter",
+      searchUrl: "https://filter-v6.globosoftware.net/search",
+    },
+    shop: {
+      name: "{{ shop.name | escape }}",
+      url: "{{ shop.url }}",
+      domain: "{{ shop.permanent_domain }}",
+      is_multicurrency: {% assign is_multicurrency = shop.enabled_currencies | size %}{% if is_multicurrency > 1 and true %}true{% else %}false{% endif %},
+      currency: {{shop.currency | json}},
+      cur_currency: {{cart.currency.iso_code | json}},
+      cur_locale: {{request.locale.iso_code | json}},
+      locale: {% for locale in shop.published_locales %}{% if locale.primary %}{{locale.iso_code | json}}{% endif %}{% endfor %},
+      product_image: {width: 500, height: 500},
+      no_image_url: "https://cdn.shopify.com/s/images/themes/product-1.png",
+      themeStoreId: 730,
+      swatches: {{ shop.metafields.globo.swatches | json }},
+      translation: {"default":{"search":{"suggestions":"Suggestions","collections":"Collections","pages":"Pages","product":"Product","products":"Products","view_all":"Search for","not_found":"Sorry, nothing found for"},"filter":{"filter_by":"Filter By","clear_all":"Clear All","view":"View","clear":"Clear","in_stock":"In Stock","out_of_stock":"Out of Stock","ready_to_ship":"Ready to ship"},"sort":{"sort_by":"Sort By","manually":"Featured","availability_in_stock_first":"Availability","best_selling":"Best Selling","alphabetically_a_z":"Alphabetically, A-Z","alphabetically_z_a":"Alphabetically, Z-A","price_low_to_high":"Price, low to high","price_high_to_low":"Price, high to low","date_new_to_old":"Date, new to old","date_old_to_new":"Date, old to new","sale_off":"% Sale off"},"product":{"add_to_cart":"Add to cart","unavailable":"Unavailable","sold_out":"Sold out","sale":"Sale","load_more":"Load more","limit":"Show","search":"Search products","no_results":"No products found"}}},
+      redirects: {{ shop.metafields.globo.redirects | json }},
+      images: ["bng.png","burg-bg-long.png","burg-bg.png","cvv.png","default-bg.png","gluten-free.png","glutenfree-w.png","hero_slide_1.jpg","kc.png","keto-w.png","keto.png","kosher-w.png","kosher.png","non-gmo.png","nonglyphosate-w.png","nongmo-w.png","nut-free.png","organic-w.png","password-page-background.jpg","patn.png","peanutfree-w.png","sprouted-prod-bg.jpg","sprouted-w.png","sprouted.png","sprouted_v2.png","usda-organic.png","vegan-w.png","vegan.png"],
+      settings: {{ settings | json }},
+    },
+    filter: {
+      id: {"default":31078}[page_id] || {"default":31078}['default'] || 0,
+      layout: 1,
+      showCount: 1,
+      isLoadMore: 1
+    },
+    collection: {
+      id: {{ collection.id | default: 0 }},
+      handle: '{{ collection.handle }}',
+      sort: 'best-selling',
+      tags: {% if current_tags %}[{% for tag in current_tags %}{{ tag | json }},{{ tag | handle | json }}{% unless forloop.last %},{% endunless %}{% endfor %}]{% else %}null{% endif %},
+      vendor: {{ collection.current_vendor | json }},
+      type: {{ collection.current_type | json }},
+      term: {{ search.terms | escape | json }},
+      limit: 12,
+      products_count: {{collection.products_count | default: 0}}
+    },
+    customer: {% if customer %}{id: {{customer.id}}, tags: {{customer.tags | json}}}{% else %}false{% endif %},
+    selector: {
+      sortBy: '.collection-sorting',
+      pagination: '.pagination, #gf_pagination_wrap',
+      products: '.main-content .grid.grid-collage, .main-content .grid-uniform'
+    }
+  };
+</script>
+<script id="gspfSearchResult" type="template/html">{% include 'globo.filter.search' %}</script>
+<script id="gspfFilterTree"   type="template/html">{% include 'globo.filter.tree' %}</script>
+<script id="gspfFilterSort"   type="template/html">{% include 'globo.filter.sort' %}</script>
+<script id="gspfProduct"      type="template/html">{% include 'globo.filter.product' %}</script>
+<script id="gspfNoResults"    type="template/html">{% include 'globo.filter.no_results' %}</script>
+<script id="gspfPagination"   type="template/html">{% include 'globo.filter.pagination' %}</script>
+{{ 'v5.globo.filter.lib.js' | asset_url | script_tag }}
+<script type="text/javascript">var globofilter = new GloboFilter(GloboFilterConfig);</script>

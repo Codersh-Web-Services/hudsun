@@ -1,0 +1,1272 @@
+{
+  "current": {
+    "color_body_bg": "#ffffff",
+    "color_headings": "#1f2021",
+    "color_body_text": "#333333",
+    "color_borders": "#1f2021",
+    "color_button_text": "#ffffff",
+    "color_primary": "#fa931b",
+    "color_secondary": "#fa931b",
+    "color_product_background": "#f4f1f0",
+    "color_sale_tag": "#988c86",
+    "color_input": "#f4f1f0",
+    "color_newsletter": "#f4f1f0",
+    "color_drawer_background": "#ffffff",
+    "color_drawer_text": "#333333",
+    "color_drawer_border": "#988c86",
+    "color_drawer_button": "#fa931b",
+    "color_drawer_button_text": "#ffffff",
+    "type_header_family": "old_standard_tt_n4",
+    "type_header_base_size": "30px",
+    "type_header_border_thickness": "1px",
+    "type_accent_family": "montserrat_n6",
+    "type_base_family": "arapey_n4",
+    "type_base_size": "16px",
+    "cart_type": "drawer",
+    "cart_notes_enable": false,
+    "social_facebook_link": "https:\/\/www.facebook.com\/hudsonpecan",
+    "social_instagram_link": "https:\/\/www.instagram.com\/hudsonpecanco",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCoAgLXwXknpdFG6RLOnnh_A",
+    "favicon": "shopify:\/\/shop_images\/Hudson_Pecan_Favicon_196x196_261e7250-a9fe-4d56-b997-aec420c015ca.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/hudson-pecan-logo.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "small",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#fa931b",
+    "checkout_button_color": "#fa931b",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/hudson-pecan-logo.png",
+          "logo_max_width": 150,
+          "header_color": "#333333",
+          "transparent_header_enable": false,
+          "transparent_header_color": "#ffffff",
+          "search": "none",
+          "main_menu_link_list": "main-menu",
+          "drawer_bottom_link_list": "footer",
+          "drawer_search_enable": false,
+          "show_announcement": true,
+          "home_page_only": false,
+          "text": "20% OFF 4th of July Sale: Use code JULY20 at checkout.............Free Shipping On Orders Over $50",
+          "link": "shopify:\/\/collections\/all",
+          "color_bg": "#fa931b",
+          "color_text": "#ffffff"
+        }
+      },
+      "slideshow": {
+        "type": "slideshow",
+        "blocks": {
+          "slideshow-0": {
+            "type": "slide",
+            "settings": {
+              "image_position": "center center",
+              "image_overlay": true,
+              "image_overlay_opacity": 25,
+              "text_alignment": "center",
+              "slide_heading": "Hero Banner",
+              "slide_subheading": "An introductory",
+              "button_label": "Shop now",
+              "slide_text_color": "#ffffff",
+              "slide_button_label_color": "#ffffff",
+              "slide_button_background_color": "#1f2021"
+            }
+          },
+          "slideshow-1": {
+            "type": "slide",
+            "settings": {
+              "image_position": "center center",
+              "image_overlay": true,
+              "image_overlay_opacity": 25,
+              "text_alignment": "center",
+              "slide_heading": "Hero Banner",
+              "slide_subheading": "An introductory",
+              "button_label": "Shop now",
+              "slide_text_color": "#ffffff",
+              "slide_button_label_color": "#ffffff",
+              "slide_button_background_color": "#1f2021"
+            }
+          }
+        },
+        "block_order": [
+          "slideshow-0",
+          "slideshow-1"
+        ],
+        "settings": {
+          "home_hero_height": "full",
+          "hero_home_auto": false,
+          "home_hero_auto_speed": 5
+        }
+      },
+      "featured-content": {
+        "type": "featured-content",
+        "settings": {
+          "home_page_full_width": false,
+          "section_title": "",
+          "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+          "text_size": "large"
+        }
+      },
+      "featured-collections": {
+        "type": "featured-collections",
+        "blocks": {
+          "featured-collections-0": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "featured-collections-1": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "featured-collections-2": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "featured-collections-3": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "featured-collections-4": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          }
+        },
+        "block_order": [
+          "featured-collections-0",
+          "featured-collections-1",
+          "featured-collections-2",
+          "featured-collections-3",
+          "featured-collections-4"
+        ],
+        "settings": {
+          "title": "Collection list"
+        }
+      },
+      "featured-products": {
+        "type": "featured-products",
+        "settings": {
+          "title": "Featured collection",
+          "home_featured_products": "",
+          "collection_products_grid": "grid"
+        }
+      },
+      "featured-product": {
+        "type": "featured-product",
+        "settings": {
+          "featured_product": "",
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_payment_button": true,
+          "show_share_buttons": true,
+          "enable_video_looping": false
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "settings": {
+          "heading": "Subscribe to our newsletter",
+          "subheading": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_logo": "shopify:\/\/shop_images\/hudson-pecan-logo-footer.png",
+          "col_two_head": "Sitemap",
+          "footer_custom_menu": "sitemap",
+          "col_three_head": "Email Signup",
+          "col_three_desc": "Sign up for news and special offers",
+          "col_fourth_head": "",
+          "soc_instagram": "",
+          "soc_fb": "",
+          "soc_twitter": "",
+          "soc_pinterest": "",
+          "soc_youtube": "",
+          "copyright_text": "© 2021 Hudson Pecan | All Rights Reserved",
+          "copyright_menu_link": "legal-menus",
+          "show_announcement": false,
+          "home_page_only": true,
+          "text": "Announce something here",
+          "link": "",
+          "color_bg": "#1c1d1d",
+          "color_text": "#ffffff"
+        }
+      },
+      "hero-slider-custom": {
+        "type": "hero-slider-custom",
+        "settings": {
+          "hero_background": "shopify:\/\/shop_images\/home-banner.jpg",
+          "main_hero_text": "INDULGE IN NATURE'S TASTIEST GUILT-FREE SNACK",
+          "main_hero_decription": "",
+          "main_hero_cta_text": "Shop now",
+          "main_hero_cta_link": "shopify:\/\/collections\/all"
+        }
+      },
+      "four-col-products": {
+        "type": "four-col-products",
+        "settings": {
+          "main_heading": "FEATURED PRODUCTS"
+        }
+      },
+      "testimonial-slider": {
+        "type": "testimonial-slider",
+        "blocks": {
+          "321e4b46-6815-460a-a652-b106cb708510": {
+            "type": "testimonial_slides",
+            "settings": {
+              "slide_content": "These are seriously the most savory pecans I have ever tasted! Yum!",
+              "slide_author": "Justin L."
+            }
+          },
+          "308c0eb6-3341-4a4b-b72e-2abd5aa814f2": {
+            "type": "testimonial_slides",
+            "settings": {
+              "slide_content": "Your praline pecans are to die for! Almost ate the entire bag at once.",
+              "slide_author": "Loretta K."
+            }
+          },
+          "5b333af2-85f2-43a5-b609-c1b598d2f52b": {
+            "type": "testimonial_slides",
+            "settings": {
+              "slide_content": "Hudson paper shell pecans are a holiday staple in our home. It's hard to imagine Christmas time without them.",
+              "slide_author": "Chauncey S."
+            }
+          }
+        },
+        "block_order": [
+          "321e4b46-6815-460a-a652-b106cb708510",
+          "308c0eb6-3341-4a4b-b72e-2abd5aa814f2",
+          "5b333af2-85f2-43a5-b609-c1b598d2f52b"
+        ],
+        "settings": {
+          "sec_heading": "What Our Fans Are Saying"
+        }
+      },
+      "two-sec-home": {
+        "type": "two-sec-home",
+        "settings": {
+          "Sec_bg": "shopify:\/\/shop_images\/IMG_4453_2.jpg",
+          "sec_heading": "Family-owned Georgia grown",
+          "sec_desc": "Hudson Pecan began as a passion project over 150 years ago and has transformed into more than 2,200 acres of sun-kissed Georgia orchards. Known for cultivating the highest quality of pecans, Hudson Pecan remains family-owned and grows superior pecans in southern Georgia.",
+          "cta_text": "Learn More",
+          "cta_link": "shopify:\/\/pages\/about-us",
+          "cta_text2": "See Our Farm"
+        }
+      },
+      "social-feed-home": {
+        "type": "social-feed-home",
+        "blocks": {
+          "473f2cb1-c97b-4485-a03b-f23615675bfb": {
+            "type": "store_finder",
+            "settings": {
+            }
+          },
+          "6301aeb9-bf7b-4714-b61c-d31e1a9bde4a": {
+            "type": "store_finder",
+            "settings": {
+            }
+          },
+          "60cf973c-b12d-4111-8358-c4c019de20c3": {
+            "type": "store_finder",
+            "settings": {
+            }
+          },
+          "d3c1c2b1-e716-4e6a-940b-24b1acae0a48": {
+            "type": "store_finder",
+            "settings": {
+            }
+          },
+          "c1bc4aac-753e-49dc-9f38-3bd61b1ddcd3": {
+            "type": "store_finder",
+            "settings": {
+            }
+          },
+          "0dc180c9-177d-48ef-95f6-1d32a9a79130": {
+            "type": "store_finder",
+            "settings": {
+            }
+          },
+          "fa09a1fc-9f05-459f-8e25-1920b796d9e8": {
+            "type": "store_finder",
+            "settings": {
+            }
+          },
+          "b9e8318b-7ce4-4e0e-b861-aaf05516ec80": {
+            "type": "store_finder",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "473f2cb1-c97b-4485-a03b-f23615675bfb",
+          "6301aeb9-bf7b-4714-b61c-d31e1a9bde4a",
+          "60cf973c-b12d-4111-8358-c4c019de20c3",
+          "d3c1c2b1-e716-4e6a-940b-24b1acae0a48",
+          "c1bc4aac-753e-49dc-9f38-3bd61b1ddcd3",
+          "0dc180c9-177d-48ef-95f6-1d32a9a79130",
+          "fa09a1fc-9f05-459f-8e25-1920b796d9e8",
+          "b9e8318b-7ce4-4e0e-b861-aaf05516ec80"
+        ],
+        "settings": {
+          "sec_heading": "Also found at"
+        }
+      },
+      "header-with-overlay-ls-faq": {
+        "type": "header-with-overlay-ls-faq",
+        "settings": {
+          "overlay_background": false,
+          "main_text": "",
+          "sub_text": ""
+        }
+      },
+      "our-story-section": {
+        "type": "our-story-section",
+        "settings": {
+          "sub_desc": "Kathy and I come from a line of artisan bakers. Our family-owned bakery is located up the valley from Vancouver, British Columbia. TheOvenDoor.co is our new online home where you can access baked goods from our family of brands!",
+          "title_text": "A Note From Our Owners",
+          "main_desc": "<p>Having easy access to great tasting, healthy food is important to you. \r\r<\/p><p>It’s important to us too.\r\r<\/p><p>Over 30 years ago, our bakery was built with the desire to make the healthiest, tastiest bread possible. \r\r<\/p><p>Then in 2002, we came close to losing everything when Kathy had a life-threatening stroke. Through that crisis and long recovery, we were reminded how important it is to invest in our health. This intensified our passion to help as many people as we can live vibrant lives through the products we make. \r\r<\/p><p>Today, we have four distinct brands: Silver Hills Sprouted Bakery, One Degree Organic Foods, Little Northern Bakehouse, and Carbonaut available in stores across Canada and the US.  While each brand has its special emphasis, all our products are plant-based and non-GMO. You can now enjoy all four brands here at The Oven Door.\r\r<\/p><p>We understand the journey to better health can be a long road, but investing in your health is the greatest gift you can give those you love. We hope we can play a small part in your journey.\r\r<\/p><p>Welcome to the Oven Door.\r\r<\/p><p>-Stan &amp; Kathy<\/p>",
+          "sec_heading": "Our Culture",
+          "sec_desc": "To this day, our brands remain family-owned and family-run. We remain committed to creating the best-tasting breads, granolas, cereals and other delicious goodness to fit into any healthy lifestyle.<br><br>\n\nAll our products are always guaranteed non-GMO and made with plant-based ingredients. Because we’re bakers, everything we create is made with taste and texture in mind.",
+          "cta_title": "Contact Us",
+          "cta_link": "shopify:\/\/pages\/contact"
+        }
+      },
+      "contact-us-page": {
+        "type": "contact-us-page",
+        "settings": {
+          "overlay_background": true,
+          "section_background": "shopify:\/\/shop_images\/hero-img.jpg",
+          "main_text": "Contact Us",
+          "sub_text": "",
+          "main_desc": "We're here to help! Please use the form below to reach our customer support team. We’ll get back to you as soon as possible.",
+          "address": "559 Vo Tech Dr <br>\nOcilla, GA 31774",
+          "email": "<a href=\"mailto:info@hudsonpecan.com\">info@hudsonpecan.com<\/a>",
+          "phone": "Call us: <a href=\"tel:2294689473\">(229) 468-9473<\/a>",
+          "schedule": "Monday - Friday <br>\n8:00 am - 5:00 pm EST"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "product_vendor_enable": false,
+          "social_sharing_products": true,
+          "quantity_enabled": true,
+          "product_selector": "radio",
+          "enable_payment_button": true,
+          "add_to_cart_button_size": "small",
+          "media_layout": "thumbnails",
+          "enable_image_zoom": true,
+          "enable_video_looping": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "Test Recommended products"
+        }
+      },
+      "product-template-custom": {
+        "type": "product-template-custom",
+        "settings": {
+          "product_vendor_enable": false,
+          "social_sharing_products": false,
+          "quantity_enabled": true,
+          "product_selector": "radio",
+          "enable_payment_button": false,
+          "add_to_cart_button_size": "large",
+          "media_layout": "thumbnails",
+          "enable_image_zoom": true,
+          "enable_video_looping": false
+        }
+      },
+      "testimonial-slider-product": {
+        "type": "testimonial-slider-product",
+        "settings": {
+        }
+      },
+      "rtl-product-section": {
+        "type": "rtl-product-section",
+        "settings": {
+          "ltl_heading": "Ingredients",
+          "ltl_content": "Organic sprouted whole wheat, organic wheat flour, water, organic multigrain blend (organic sunflower seeds, organic whole oats, organic whole rye, organic whole spelt, organic whole flax seeds, organic sesame seeds, organic pumpkin seeds, organic whole millet, organic black sesame seeds, organic whole barley, organic whole quinoa, organic poppy seeds), organic cane sugar, cultured wheat flour (wheat flour, bacterial culture), sea salt, yeast, organic molasses, enzyme, ascorbic acid, organic sunflower oil (used on equipment only, not as an ingredient).<br><br>\n\nContains wheat and sesame seeds. Made in a peanut- and tree nut-free facility.",
+          "ltl_bg_image": "shopify:\/\/shop_images\/Image_21.png",
+          "ltl_bg_color1": "rgba(0,0,0,0)"
+        }
+      },
+      "default-hero": {
+        "type": "default-hero",
+        "blocks": {
+          "a675da90-3715-49c3-a261-e73814fbde24": {
+            "type": "text_block",
+            "settings": {
+              "page_handle_id": "contact-us",
+              "hero_back_img": "shopify:\/\/shop_images\/hero-img.jpg",
+              "ov_title": "",
+              "dark_bg": true,
+              "opacity_value": 100
+            }
+          }
+        },
+        "block_order": [
+          "a675da90-3715-49c3-a261-e73814fbde24"
+        ],
+        "settings": {
+        }
+      },
+      "default-collection": {
+        "type": "default-collection",
+        "blocks": {
+          "24590637-006d-437e-86fe-5fe01fc76af1": {
+            "type": "feature_recipe",
+            "settings": {
+              "collection_choose": "pecan-candy",
+              "article_choose": "recipes\/butter-pecan-frosting"
+            }
+          },
+          "19f6932b-488e-41ec-86d4-dfe7ede4b005": {
+            "type": "feature_recipe",
+            "settings": {
+              "collection_choose": "pecans-shelled",
+              "article_choose": "recipes\/pecan-pie"
+            }
+          },
+          "5eb75795-ca66-4e98-b049-d505b52242a5": {
+            "type": "feature_recipe",
+            "settings": {
+              "collection_choose": "pecans-in-shell",
+              "article_choose": "recipes\/pecan-granola-bars"
+            }
+          },
+          "cc4d9c68-bc2a-4fa6-99e3-dc516ad69c31": {
+            "type": "feature_recipe",
+            "settings": {
+              "collection_choose": "gift-boxes",
+              "article_choose": "recipes\/maple-pecan-sticky-bars"
+            }
+          }
+        },
+        "block_order": [
+          "24590637-006d-437e-86fe-5fe01fc76af1",
+          "19f6932b-488e-41ec-86d4-dfe7ede4b005",
+          "5eb75795-ca66-4e98-b049-d505b52242a5",
+          "cc4d9c68-bc2a-4fa6-99e3-dc516ad69c31"
+        ],
+        "settings": {
+          "Sec_bg_candy": "shopify:\/\/shop_images\/candy-img.jpg",
+          "sec_heading_candy": "Sweet dreams are made of these!",
+          "sec_desc_candy": "We’ve combined our pecans with chocolates, caramels, brown sugar, and more, creating a menu of sweet treats you are sure to love. Enjoy our flavored pecans on their own, add them to salads, or use them to balance out your charcuterie board. Pecans aren’t just for pecan pie and sugary desserts. (Although, we love those too!)",
+          "cta_text_candy": "Browse Pecan Recipes",
+          "cta_link_candy": "shopify:\/\/blogs\/recipes",
+          "Sec_bg_shelled": "shopify:\/\/shop_images\/shelled-img.jpg",
+          "sec_heading_shelled": "Health benefits of pecans",
+          "sec_desc_shelled": "Rich in flavor and packed with nutrients, pecans are a healthy choice when it comes to satisfying cravings. Pecans contain protein, fiber, vitamins, minerals, and antioxidants! They also benefit heart health and boost immunity.",
+          "cta_text_shelled": "Learn More About Nutrition",
+          "cta_link_shelled": "shopify:\/\/pages\/nutritional-benefits-of-pecans",
+          "Sec_bg_inshell": "shopify:\/\/shop_images\/peanut.jpg",
+          "sec_heading_inshell": "Are pecans a healthy snack choice?",
+          "sec_desc_inshell": "If you think pecans are just a tasty nut for comfort foods and desserts, think again! Pecans are a healthy and satisfying snack packed with important nutrients. In fact, pecans are high in healthy fats, protein, and fiber. According to the USDA, pecans contain more antioxidants than any other tree nut! Pecans are also recognized as a heart-healthy food by the American Heart Association.",
+          "cta_text_inshell": "Learn More About Nutrition",
+          "cta_link_inshell": "shopify:\/\/pages\/nutritional-benefits-of-pecans",
+          "Sec_bg_giftbox": "shopify:\/\/shop_images\/gift-boxes-img.jpg",
+          "sec_heading_giftbox": "Give an American classic",
+          "sec_desc_giftbox": "Pecans in any form make a unique, splendid gift! Perfect for holidays, birthdays, parties, and more, your loved ones are sure to appreciate these tasty and thoughtful treats. These American classics can be enjoyed raw, salted, or candied. More importantly, our premium quality pecans are a true delight for culinary creatives, sweet tooths, and health-conscious foodies!",
+          "cta_text_giftboxes": "Browse Pecan Recipes",
+          "cta_link_giftboxes": "shopify:\/\/blogs\/recipes",
+          "Sec_bg": "shopify:\/\/shop_images\/peanut.jpg",
+          "sec_heading": "Are pecans a healthy snack choice?",
+          "sec_desc": "If you think pecans are just a tasty nut for comfort foods and desserts, think again! Pecans are a healthy and satisfying snack packed with important nutrients. In fact, pecans are high in healthy fats, protein, and fiber. According to the USDA, pecans contain more antioxidants than any other tree nut! Pecans are also recognized as a heart-healthy food by the American Heart Association.",
+          "cta_text": "Learn More About Nutrition",
+          "cta_link": "shopify:\/\/pages\/nutritional-benefits-of-pecans",
+          "related_title": "YOU MIGHT ALSO LIKE"
+        }
+      },
+      "product-filter-collection": {
+        "type": "product-filter-collection",
+        "settings": {
+          "ov_title": "SHOP OUR PRODUCTS"
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical"
+        }
+      },
+      "three-col-products": {
+        "type": "three-col-products",
+        "settings": {
+          "main_heading": "Crowd Favorites"
+        }
+      },
+      "featured-recipes": {
+        "type": "featured-recipes",
+        "settings": {
+          "main_text": "Delicious Pecan Recipes"
+        }
+      },
+      "social-feed": {
+        "type": "social-feed",
+        "settings": {
+          "sec_heading": "Stories From The Orchard",
+          "feed_width": 100,
+          "html_area": ""
+        }
+      },
+      "product-recommendations-v2": {
+        "type": "product-recommendations-v2",
+        "blocks": {
+          "c47bd938-358d-418b-8319-04126b1f2bdc": {
+            "type": "feature_product",
+            "settings": {
+              "product_handle1": "chocolate-covered-pecans",
+              "product_handle2": "desirable-pecans",
+              "product_handle3": "hudson-pecan-american-hat",
+              "product_handle4": "chocolate-covered-pecans",
+              "product_handle5": ""
+            }
+          },
+          "8a3f7182-b642-4d08-8ac7-eb52404b5b73": {
+            "type": "feature_product",
+            "settings": {
+              "product_handle1": "chocolate-covered-pecans",
+              "product_handle2": "halves",
+              "product_handle3": "hudson-pecan-american-hat",
+              "product_handle4": "",
+              "product_handle5": ""
+            }
+          },
+          "52d0be81-008c-4492-af3e-24628ce3395c": {
+            "type": "feature_product",
+            "settings": {
+              "product_handle1": "halves",
+              "product_handle2": "milk-chocolate-rocky-road-bark",
+              "product_handle3": "",
+              "product_handle4": "",
+              "product_handle5": ""
+            }
+          }
+        },
+        "block_order": [
+          "c47bd938-358d-418b-8319-04126b1f2bdc",
+          "8a3f7182-b642-4d08-8ac7-eb52404b5b73",
+          "52d0be81-008c-4492-af3e-24628ce3395c"
+        ],
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "Related Product Test"
+        }
+      },
+      "testimonial-slider-product-v2": {
+        "type": "testimonial-slider-product-v2",
+        "blocks": {
+          "5e7de99b-5a76-4a8b-8429-759fad2e5367": {
+            "type": "testimonial_slides",
+            "settings": {
+              "slide_content": "These are seriously the most savory pecans I have ever tasted! Yum!",
+              "slide_author": "Justin L."
+            }
+          },
+          "0b024fa9-2e77-43e0-938d-be1a485f14ee": {
+            "type": "testimonial_slides",
+            "settings": {
+              "slide_content": "Your praline pecans are to die for! Almost ate the entire bag at once.",
+              "slide_author": "Loretta K."
+            }
+          },
+          "2f752bf1-8462-4ae3-ac72-46ec5c00b395": {
+            "type": "testimonial_slides",
+            "settings": {
+              "slide_content": "Hudson paper shell pecans are a holiday staple in our home. It's hard to imagine Christmas time without them.",
+              "slide_author": "Chauncey S."
+            }
+          }
+        },
+        "block_order": [
+          "5e7de99b-5a76-4a8b-8429-759fad2e5367",
+          "0b024fa9-2e77-43e0-938d-be1a485f14ee",
+          "2f752bf1-8462-4ae3-ac72-46ec5c00b395"
+        ],
+        "settings": {
+          "sec_heading": "WHAT OUR FANS ARE SAYING"
+        }
+      },
+      "related-products": {
+        "type": "related-products",
+        "settings": {
+          "show_related_products": true,
+          "related_title": "Products you may also like",
+          "related_grid_num": "3",
+          "related_grid_row": "1"
+        }
+      },
+      "template-about": {
+        "type": "template-about",
+        "settings": {
+          "overlay_background": true,
+          "section_background": "shopify:\/\/shop_images\/about-banner.jpg",
+          "main_text": "",
+          "sub_text": "",
+          "pecan1_img": "shopify:\/\/shop_images\/PaperShell.jpg",
+          "pecan1_title": "Paper Shell Pecans",
+          "pecan1_desc": "Paper Shell Pecans, also known as Schley Pecans, have a bright, buttery color and are a favorite choice for holiday gifts. Their high oil content makes them perfect for sugary or savory coatings. For culinary creatives, Paper Shell Pecans also work well in rich sauce recipes.",
+          "pecan2_img": "shopify:\/\/shop_images\/desireables.jpg",
+          "pecan2_title": "Desirable Pecans",
+          "pecan2_desc": "With easy-to-crack shells and large kernels, Desirable Pecans are perfect for topping dishes or pies. They’re known for having a bright color and robust flavor. Desirable Pecans are also the most preferred nut for export, reaching pecan lovers across the globe!",
+          "pecan3_img": "shopify:\/\/shop_images\/stuart.jpg",
+          "pecan3_title": "Stuart Pecans",
+          "pecan3_desc": "Stuart Pecans are the most widely produced variety in Georgia and are slightly smaller than Desirable Pecans. Nutty, sweet, and crunchy, Stuart Pecans are excellent for healthy snacking or for chopping and mixing into dishes."
+        }
+      },
+      "blogs-template": {
+        "type": "blogs-template",
+        "blocks": {
+          "3fca65c2-ee32-4463-a37a-e47e13428186": {
+            "type": "text_block",
+            "settings": {
+              "page_handle_id": "news",
+              "hero_back_img": "shopify:\/\/shop_images\/hero-img.jpg",
+              "ov_title": "News",
+              "dark_bg": true,
+              "opacity_value": 40
+            }
+          },
+          "f158e19c-6930-460b-847f-ba61ee3f57bc": {
+            "type": "text_block",
+            "settings": {
+              "page_handle_id": "recipes",
+              "hero_back_img": "shopify:\/\/shop_images\/recipe-banner.jpg",
+              "ov_title": "The Hudson Pecan Cookbook",
+              "dark_bg": true,
+              "opacity_value": 40
+            }
+          }
+        },
+        "block_order": [
+          "3fca65c2-ee32-4463-a37a-e47e13428186",
+          "f158e19c-6930-460b-847f-ba61ee3f57bc"
+        ],
+        "settings": {
+        }
+      },
+      "article-product-feed": {
+        "type": "article-product-feed",
+        "settings": {
+          "sec_heading": "You Might Also Like"
+        }
+      },
+      "template-legal": {
+        "type": "template-legal",
+        "settings": {
+          "hero_back_img": "shopify:\/\/shop_images\/benefits.banner.jpg",
+          "ov_title": "",
+          "dark_bg": false,
+          "opacity_value": 40
+        }
+      },
+      "instafeed": {
+        "type": "instafeed",
+        "settings": {
+          "heading_font": "helvetica_n4",
+          "heading_size": 20,
+          "feed_width": 100,
+          "html_area": ""
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "social_sharing_blog": true
+        }
+      },
+      "product-page-reviews": {
+        "type": "product-page-reviews",
+        "settings": {
+          "sec_heading": "Customer Reviews"
+        }
+      },
+      "template-benefits-pecan": {
+        "type": "template-benefits-pecan",
+        "settings": {
+          "hero_back_img": "shopify:\/\/shop_images\/benefits.banner.jpg",
+          "ov_title": "",
+          "dark_bg": false,
+          "opacity_value": 40
+        }
+      },
+      "LP-holiday-hero": {
+        "type": "LP-holiday-hero",
+        "settings": {
+          "overlay_background": true,
+          "section_background": "shopify:\/\/shop_images\/holiday.jpg",
+          "main_text": "",
+          "sub_text": ""
+        }
+      },
+      "LP-holiday-recipe1": {
+        "type": "LP-holiday-recipe1",
+        "settings": {
+          "title": "OUR PECAN HALVES PLEASE ANY PALATE",
+          "desc": "Pecan Pieces are Perfect for Cooking, Baking, and Snacking",
+          "product_handle": "halves",
+          "pec_img": "shopify:\/\/shop_images\/pecan-halves.jpg",
+          "capt": "<p>PECAN PIE: <a href=\"https:\/\/www.hudsonpecan.com\/blogs\/recipes\/pecan-pie\" title=\"https:\/\/www.hudsonpecan.com\/blogs\/recipes\/pecan-pie\">Get the recipe<\/a><\/p>",
+          "sec_reverse": true
+        }
+      },
+      "LP-holiday-recipe2": {
+        "type": "LP-holiday-recipe2",
+        "settings": {
+          "title": "MIX HUDSON PECANS INTO YOUR HOLIDAY SIDES",
+          "desc": "Holiday Decadence Made Easy",
+          "product_handle": "fresh-pecan-pieces",
+          "pec_img": "shopify:\/\/shop_images\/green-beans.jpg",
+          "capt": "<p>GREEN BEANS WITH BACON AND PECANS: <a href=\"https:\/\/www.hudsonpecan.com\/blogs\/recipes\/green-beans-with-bacon-and-pecans\" title=\"https:\/\/www.hudsonpecan.com\/blogs\/recipes\/green-beans-with-bacon-and-pecans\">Get the recipe<\/a><\/p>",
+          "sec_reverse": false
+        }
+      },
+      "LP-holiday-recipe3": {
+        "type": "LP-holiday-recipe3",
+        "settings": {
+          "title": "HOLIDAY COOKING MADE EASY",
+          "desc": "Pre-Chopped and Ready to add to Your Favorite Recipe!",
+          "product_handle": "small-fancy-pecan-pieces-buy-one-get-one-free",
+          "pec_img": "shopify:\/\/shop_images\/maple.jpg",
+          "capt": "<p>MAPLE PECAN STICKY BARS: <a href=\"https:\/\/www.hudsonpecan.com\/blogs\/recipes\/maple-pecan-sticky-bars\" title=\"https:\/\/www.hudsonpecan.com\/blogs\/recipes\/maple-pecan-sticky-bars\">Get the recipe<\/a><\/p>",
+          "sec_reverse": true
+        }
+      },
+      "md-hero": {
+        "type": "md-hero",
+        "settings": {
+          "hero_back_img": "shopify:\/\/shop_images\/Group_113.jpg",
+          "hero_back_img_mob": "shopify:\/\/shop_images\/Group_114.jpg",
+          "sec_head": "The Perfect GIFT For the perfect mom"
+        }
+      },
+      "md-three-col-products": {
+        "type": "md-three-col-products",
+        "settings": {
+          "main_heading": "Mother’s day FAVORITES",
+          "description": "<p>Looking for a unique way to say “I love you” this Mother’s Day? Hudson Pecan has the perfect gift for the perfect mom. Show her the appreciation she deserves with these sweet and savory treats.<\/p>"
+        }
+      },
+      "md-testimonial-slider": {
+        "type": "md-testimonial-slider",
+        "blocks": {
+          "0a41437f-4e6f-497d-80eb-1d66bb47faf1": {
+            "type": "testimonial_slides",
+            "settings": {
+              "slide_content": "These are seriously the most savory pecans I have ever tasted!",
+              "slide_author": "Justin L."
+            }
+          },
+          "e11ae067-2e4a-4daa-99d2-a505153ae9d6": {
+            "type": "testimonial_slides",
+            "settings": {
+              "slide_content": "Your praline pecans are to die for! Almost ate the entire bag at once.",
+              "slide_author": "Loretta K."
+            }
+          },
+          "130ba360-91d1-4f14-8b49-d6bc41568641": {
+            "type": "testimonial_slides",
+            "settings": {
+              "slide_content": "Your praline pecans are to die for! Almost ate the entire bag at once.",
+              "slide_author": "Loretta K."
+            }
+          }
+        },
+        "block_order": [
+          "0a41437f-4e6f-497d-80eb-1d66bb47faf1",
+          "e11ae067-2e4a-4daa-99d2-a505153ae9d6",
+          "130ba360-91d1-4f14-8b49-d6bc41568641"
+        ],
+        "settings": {
+          "sec_heading": "What Our Fans Are Saying"
+        }
+      },
+      "md-two-sec": {
+        "type": "md-two-sec",
+        "blocks": {
+          "50ef4a0e-d9de-4e3d-85cb-903c2a788fef": {
+            "type": "text_block",
+            "disabled": true,
+            "settings": {
+              "Sec_bg": "shopify:\/\/shop_images\/Intersection_27_37b05bc4-a483-459d-bc8d-4d12fb05a30c.jpg",
+              "sec_heading": "Memories with mom",
+              "sec_desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu",
+              "cta_text": "SEE THE RECIPE",
+              "cta_link": ""
+            }
+          },
+          "f4de320d-45da-4fbc-9aeb-45ef64429048": {
+            "type": "text_block",
+            "settings": {
+              "Sec_bg": "shopify:\/\/shop_images\/Intersection-12.jpg",
+              "sec_heading": "Family-owned Georgia grown",
+              "sec_desc": "Hudson Pecan Company began as a passion project 150 years ago and has grown into more than 30 acres of sun-kissed Georgia orchards. Known for cultivating the highest quality pecans, Hudson Pecan Company remains family-owned and committed to excellence.",
+              "cta_text": "",
+              "cta_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "50ef4a0e-d9de-4e3d-85cb-903c2a788fef",
+          "f4de320d-45da-4fbc-9aeb-45ef64429048"
+        ],
+        "settings": {
+        }
+      },
+      "health-benefits-hero": {
+        "type": "health-benefits-hero",
+        "settings": {
+          "hero_background": "shopify:\/\/shop_images\/health-benefits-hero.jpg",
+          "main_hero_text": "Snack The Healthy Way <br>\nWith Hudson Pecan",
+          "main_hero_decription": "SIGN UP TO GET 10% OFF YOUR FIRST ORDER",
+          "main_hero_cta_text": "Submit",
+          "main_hero_cta_link": ""
+        }
+      },
+      "benefits-intro": {
+        "type": "benefits-intro",
+        "settings": {
+          "main_hero_text": "Taste The Benefits In Every Bite",
+          "main_hero_decription": "Never feel guilty about grabbing a handful of this delicious and nutritious snack. Not only do pecans check off several important boxes when it comes to snacking. They also have incredible health benefits in every bite.",
+          "main_hero_cta_text": "Learn more",
+          "main_hero_cta_link": ""
+        }
+      },
+      "health-benefits": {
+        "type": "health-benefits",
+        "settings": {
+          "overlay_background": false,
+          "main_text": "",
+          "sub_text": "",
+          "benefit1_img": "shopify:\/\/shop_images\/Intersection_27_e8da6918-46fc-4027-89e6-e5252b917bf5.jpg",
+          "benefit1_title": "DELICIOUSLY KETO-FRIENDLY",
+          "benefit1_desc": "For those eating keto or paleo diets, raw pecans satisfy healthy cravings with their rich, buttery flavor. Even a handful goes a long way! From sweet to savory, there are many unique recipes that incorporate pecans into healthy diets! Use roasted, shelled, or in-shell pecans to top off a salad, create a crust for chicken, or fish, or add them to a variety of breakfast dishes like yogurt or oatmeal.",
+          "benefit2_img": "shopify:\/\/shop_images\/AdobeStock_163093988.jpg",
+          "benefit2_title": "CERTIFIED HEART-HEALTHY",
+          "benefit2_desc": "Hudson Pecan is proud to be Certified Heart-Healthy by the American Heart Association. Our pecans, at their core, are unroasted, unsalted, and grown in the U.S. to meet the Association’s guidelines, including nutritional requirements and criteria for saturated fat, trans fat, cholesterol, sodium, and beneficial nutrients.",
+          "benefit3_img": "shopify:\/\/shop_images\/Pecan_and_Package_Image.jpg",
+          "benefit3_title": "RICH IN ANTIOXIDANTS",
+          "benefit3_desc": "Pecans have more antioxidants than any other tree nut. In addition to vitamin A, vitamin E, calcium, zinc, folic acid, potassium, and phosphorus, they’re also rich in flavonoids – a type of antioxidant found mostly in fruit and vegetables that have been found less likely to develop chronic diseases including heart disease, some cancers, diabetes, and cognitive decline."
+        }
+      },
+      "sign-up": {
+        "type": "sign-up",
+        "settings": {
+          "signup_text": "SIGN UP TO GET 10% OFF YOUR FIRST ORDER",
+          "signup_cta_text": "Submit",
+          "signup_cta_link": ""
+        }
+      },
+      "taste-the-difference": {
+        "type": "taste-the-difference",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/PecanHalvesHero.jpg",
+          "title": "TASTE THE DIFFERENCEs",
+          "subtext": "Unlike big-name brands that mass-produce their pecans, we grow, harvest, package, and ship our pecans directly from the Hudson farm in Oscilla, Georgia. The fresh flavor is so distinctly delicious, that you can taste the difference.",
+          "name": "FANCY PECAN HALVES",
+          "cta_text": "Learn more",
+          "cta_link": ""
+        }
+      },
+      "stamp-of-approval": {
+        "type": "stamp-of-approval",
+        "settings": {
+          "main_hero_text": "STAMPS OF APPROVAL",
+          "main_hero_decription": "On top of being naturally good for you and diet-friendly, these pecans check off even more health-conscious boxes. With both Kosher and American Heart Association certifications, you can enjoy thoughtful and guilt-free snacking satisfaction.",
+          "logo1": "shopify:\/\/shop_images\/Image_47.jpg",
+          "logo2": "shopify:\/\/shop_images\/Image_46.jpg",
+          "logo3": "shopify:\/\/shop_images\/Image_48.jpg",
+          "logo4": "shopify:\/\/shop_images\/Image_49.jpg",
+          "main_hero_text2": "GEORGIA-GROWN,  USA-MADE,  FAMILY-FOUNDED",
+          "video_url": ""
+        }
+      },
+      "farm-fresh-flavor-hero": {
+        "type": "farm-fresh-flavor-hero",
+        "settings": {
+          "hero_background": "shopify:\/\/shop_images\/1080x19201.png",
+          "main_hero_text": "FARM-FRESH FLAVOR",
+          "main_hero_decription": "FROM OUR TREES TO YOUR TABLE",
+          "main_hero_cta_text": "",
+          "main_hero_cta_link": ""
+        }
+      },
+      "taste-the-difference-v2": {
+        "type": "taste-the-difference-v2",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/PecanHalvesHero.jpg",
+          "title": "TASTE THE DIFFERENCE",
+          "subtext": "Unlike big-name brands that mass-produce their pecans, we grow, harvest, package, and ship our pecans directly from the Hudson farm in Oscilla, Georgia. The fresh flavor is so distinctly delicious, that you can taste the difference.",
+          "name": "FANCY PECAN HALVES",
+          "pricerange": "$8.99 - $16.99",
+          "cta_text": "SELECT A SIZE",
+          "cta_link": "",
+          "feature1": "shopify:\/\/shop_images\/Group_82.png",
+          "feature1text": "Deliciously <br> Keto-Friendly",
+          "feature2": "shopify:\/\/shop_images\/Group_84.png",
+          "feature2text": "Certified  <br> Heart-Healthy",
+          "feature3": "shopify:\/\/shop_images\/Group_86.png",
+          "feature3text": "Rich in  <br>  Antioxidants"
+        }
+      },
+      "health-benefits-v2": {
+        "type": "health-benefits-v2",
+        "settings": {
+          "overlay_background": false,
+          "main_text": "",
+          "sub_text": "",
+          "benefit1_img": "shopify:\/\/shop_images\/Intersection_-1.png",
+          "benefit1_title": "more antioxidants <br> than any other tree nut",
+          "benefit1_desc": "Did you know that pecans have more antioxidants than any other tree nut? Certified Heart-Healthy by the American Heart Association, our pecans are easy to incorporate into healthy diets. Top off a salad, blend into smoothies, create a crust for chicken or fish, or add them to pancakes or muffins for breakfast!",
+          "benefit2_img": "shopify:\/\/shop_images\/Intersection_-2.png",
+          "benefit2_title": "BUTTERY AND CRISP.  <br>  FRESH AND DELISH.",
+          "benefit2_desc": "Make Hudson Pecan’s Fancy Pecan Halves the star of snacktime or your best friend for baking. Their buttery flavor and crisp texture make the perfect combination for the best kind of snack. Nature did the work – now it’s time for you to enjoy.",
+          "benefit3_img": "shopify:\/\/shop_images\/Intersection_28_07f31f32-9df2-49d0-aac5-73dd13380c09.png",
+          "benefit3_title": "FAMILY-OWNED.  <br> GEORGIA-GROWN.",
+          "benefit3_desc": "For five generations, the Hudson family has grown premium Georgia pecans on over 2,200 acres of lush, sun-kissed orchards. What began 150 years ago continues today as Hudson Pecan proudly remains family-owned, producing nature’s tastiest, guilt-free snack."
+        }
+      },
+      "logos": {
+        "type": "logos",
+        "settings": {
+          "logo1": "shopify:\/\/shop_images\/Image_47.png",
+          "logo2": "shopify:\/\/shop_images\/Image_46.png",
+          "logo3": "shopify:\/\/shop_images\/Image_48.png",
+          "logo4": "shopify:\/\/shop_images\/Image_49.png"
+        }
+      },
+      "floating-footer": {
+        "type": "floating-footer",
+        "settings": {
+          "product": "halves",
+          "image": "shopify:\/\/shop_images\/PecanHalvesClean_cropped.png"
+        }
+      }
+    },
+    "content_for_index": [
+      "slideshow",
+      "featured-content",
+      "featured-collections",
+      "featured-products",
+      "featured-product",
+      "newsletter"
+    ]
+  },
+  "presets": {
+    "Classic": {
+      "checkout_accent_color": "#a26b25",
+      "checkout_button_color": "#000000",
+      "checkout_error_color": "e32c2b",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_announcement": true
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "slide",
+              "settings": {
+              }
+            },
+            "slideshow-1": {
+              "type": "slide",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+          }
+        },
+        "featured-content": {
+          "type": "featured-content",
+          "settings": {
+            "section_title": "",
+            "text_size": "large"
+          }
+        },
+        "featured-collections": {
+          "type": "featured-collections",
+          "blocks": {
+            "featured-collections-0": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "featured-collections-1": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "featured-collections-2": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "featured-collections-3": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "featured-collections-4": {
+              "type": "collection",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "featured-collections-0",
+            "featured-collections-1",
+            "featured-collections-2",
+            "featured-collections-3",
+            "featured-collections-4"
+          ],
+          "settings": {
+          }
+        },
+        "featured-products": {
+          "type": "featured-products",
+          "settings": {
+            "collection_products_grid": "grid"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+          }
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "featured-content",
+        "featured-collections",
+        "featured-products",
+        "featured-product",
+        "newsletter"
+      ]
+    },
+    "Playful": {
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#565656",
+      "color_borders": "#5dd2b4",
+      "color_button_text": "#ffffff",
+      "color_primary": "#7737BD",
+      "color_secondary": "#058677",
+      "color_product_background": "#fff4f6",
+      "color_sale_tag": "#e80970",
+      "color_input": "#f6f6f6",
+      "color_newsletter": "#bde9f2",
+      "color_drawer_background": "#360f5f",
+      "color_drawer_text": "#ffffff",
+      "color_drawer_border": "#50297a",
+      "color_drawer_button": "#7737BD",
+      "color_drawer_button_text": "#ffffff",
+      "color_headings": "#321863",
+      "type_header_family": "quicksand_n7",
+      "type_header_base_size": "38px",
+      "type_header_border_thickness": "1px",
+      "type_accent_family": "roboto_n7",
+      "type_accent_transform": true,
+      "type_accent_spacing": true,
+      "type_accent_subheadings": false,
+      "type_base_family": "helvetica_n4",
+      "type_base_size": "17px",
+      "type_base_italize_titles": false,
+      "cart_type": "page",
+      "cart_notes_enable": true,
+      "social_facebook_link": "",
+      "social_twitter_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_snapchat_link": "",
+      "social_google_plus_link": "",
+      "social_tumblr_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "social_fancy_link": "",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fff4f6",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Roboto",
+      "checkout_accent_color": "#7737BD",
+      "checkout_button_color": "#7737BD",
+      "checkout_error_color": "#f01130",
+      "checkout_banner_background_color": "#fff",
+      "checkout_call_to_action_color": "#a26b25",
+      "checkout_use_header_image": false,
+      "collection_products_grid": "collage",
+      "customer_layout": "customer_area",
+      "favicon_enable": false,
+      "product_vendor_enable": false,
+      "social_sharing_style": "clean",
+      "sections": {
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "1495823280244": {
+              "type": "slide",
+              "settings": {
+                "slide_text_color": "#ffffff",
+                "slide_button_label_color": "#003B34",
+                "slide_button_background_color": "#84D1B2"
+              }
+            }
+          },
+          "block_order": [
+            "1495823280244"
+          ],
+          "settings": {
+            "hero_home_auto": false,
+            "home_hero_auto_speed": 5
+          }
+        },
+        "featured-products": {
+          "type": "featured-products",
+          "settings": {
+            "home_featured_products": "frontpage",
+            "collection_products_grid": "collage"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_max_width": 260,
+            "search": "modal",
+            "main_menu_link_list": "main-menu",
+            "show_announcement": false,
+            "color_bg": "#290c49",
+            "color_text": "#ffffff"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "collection_tags_enable": false,
+            "collection_products_grid": "grid",
+            "product_vendor_enable": false
+          }
+        },
+        "1494860348200": {
+          "type": "featured-row",
+          "settings": {
+            "layout": "right"
+          }
+        },
+        "1494894035034": {
+          "type": "featured-row",
+          "settings": {
+            "layout": "left"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "product_vendor_enable": false,
+            "social_sharing_products": true,
+            "enable_image_zoom": false,
+            "enable_video_looping": false
+          }
+        },
+        "1496078102297": {
+          "type": "advanced-content",
+          "blocks": {
+            "1496078102297-0": {
+              "type": "html",
+              "settings": {
+                "code": "<div style=\"text-align:center;\">\n<h1 class=\"h1\">Use HTML to format your text so it can be easily read.<\/h1>This text can be used to share information about your brand with customers.<\/div>",
+                "width": "100%",
+                "alignment": "top-middle"
+              }
+            }
+          },
+          "block_order": [
+            "1496078102297-0"
+          ],
+          "settings": {
+          }
+        },
+        "1496177901425": {
+          "type": "advanced-content",
+          "blocks": {
+            "1496177901425-0": {
+              "type": "html",
+              "settings": {
+                "code": "<div style=\"width:745px;text-align: center; margin: 0 auto;\">This text can be used to share information about your brand with customers.<\/div>",
+                "width": "100%",
+                "alignment": "top-middle"
+              }
+            }
+          },
+          "block_order": [
+            "1496177901425-0"
+          ],
+          "settings": {
+          }
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "1496177901425",
+        "featured-products",
+        "newsletter",
+        "1496078102297",
+        "1494860348200",
+        "1494894035034"
+      ]
+    }
+  }
+}

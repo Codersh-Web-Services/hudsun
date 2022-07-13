@@ -1,0 +1,50 @@
+<!-- /snippets/featured-recipes-global.liquid -->
+<section class="blog-feed-col">
+	<div class="container">
+		<h2 class="text-center mb-5">Delicious Pecan Recipes</h2>
+			<div class="row justify-content-center">
+		        {% for article in blogs.recipes.articles limit:3 %}
+		          {% assign article_content = article.excerpt_or_content %}
+		          <div class="col-md-6 col-lg-4 mb-5">
+		          	<div class="col--wrap">
+      		            {% unless article.image == blank %}
+      		              <div class="thumb-container">
+                                    <a href="{{ article.url }}">
+                                          <div class="article__featured-image-link bg-inline" style="background-image:url('{{ article.image | img_url: '400x400' }}');">
+
+                                          </div>
+                                    </a>
+      		                
+      		                <div class="grid-item__hover"></div>
+      		                <a href="{{ article.url }}" class="floatlink"></a>
+      		              </div>
+      		            {% endunless %}
+      		            <div class="blog-body text-center">
+      		            	<div data-mh="desc-body-wocta">
+      							<h3>
+      								<a class="article__heading-link" href="{{ article.url }}">{{ article.title }}
+      								</a>
+      							</h3>
+
+      							{% if article.metafields.blog_recipe.total_time != blank %}
+      							  <p class="prep-time">Total Time: {{article.metafields.blog_recipe.total_time}}</p>
+      							{% endif %}
+
+      			                <div class="article-content">
+      			                  {{ article_content | strip_html | truncatewords: 30 }}
+      			                </div>
+      		                </div>
+      		                <div class="cta">
+      		                  <a href="{{ article.url }}" class="btn">Read More</a>
+      		                </div>
+      		            </div>
+		          	</div>           
+		          </div>
+	        {% endfor %}
+
+	        <div class="more">
+	        	<a href="https://www.hudsonpecan.com/blogs/recipes">More Recipes ></a>
+	        </div>
+	    	</div>
+	</div>
+</section>

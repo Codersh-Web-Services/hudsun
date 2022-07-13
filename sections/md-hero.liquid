@@ -1,0 +1,59 @@
+<section class="default-page-wrap">
+  <div class="dpw-header" style="background-image:url('{{section.settings.hero_back_img | img_url:'' }}');">
+   	<div class="container-fluid">
+          <div class="row">
+              <div class="col-12">
+                  <h1>{{ section.settings.sec_head }}</h1>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<style type="text/css">
+  .default-page-wrap .dpw-header {
+    padding: 150px 0;
+  }
+  .default-page-wrap .dpw-header h1 {
+    margin: 0;
+  }
+  .default-page-wrap .dpw-header {
+    background-position: top;
+  }
+  @media only screen and (max-width: 767px) {
+    .default-page-wrap .dpw-header {
+      padding: 80px 0;
+      background-image:url('{{section.settings.hero_back_img_mob | img_url:'' }}') !important;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+    
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Mother Day LP",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_back_img",
+      "label": "Hero Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_back_img_mob",
+      "label": "Mobile Hero Background Image"
+    },
+    {
+      "type": "text",
+      "id": "sec_head",
+      "label": "Section Heading"
+    }
+  ]
+}
+{% endschema %}

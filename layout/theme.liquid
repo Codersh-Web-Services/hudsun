@@ -1,0 +1,298 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+<head>
+<!-- End Google Tag Manager -->
+  
+  <!-- Basic page needs ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  {% if settings.favicon %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {% endif %}
+
+  <!-- Title and description ================================================== -->
+  <title>
+  {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <!-- Helpers ================================================== -->
+  {% include 'social-meta-tags' %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+
+  <!-- CSS ================================================== -->
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="https://use.typekit.net/fwj1fix.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
+  {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-styles.scss.css' | asset_url | stylesheet_tag }}
+  <!-- Sections ================================================== -->
+  <script>
+    window.theme = window.theme || {};
+    theme.strings = {
+      zoomClose: {{ "products.zoom.close" | t | json }},
+      zoomPrev: {{ "products.zoom.prev" | t | json }},
+      zoomNext: {{ "products.zoom.next" | t | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      addressError: {{ 'home_page.map.address_error' | t | json }},
+      addressNoResults: {{ 'home_page.map.address_no_results' | t | json }},
+      addressQueryLimit: {{ 'home_page.map.address_query_limit_html' | t | json }},
+      authError: {{ 'home_page.map.auth_error_html' | t | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartCookie: {{ 'cart.general.cookies_required' | t | json }},
+      cartSavings: {{ 'cart.general.savings_html' | t: savings: '[savings]' | json }},
+      productSlideLabel: {{ 'products.product.slide_label' | t: slide_number: '[slide_number]', slide_max: '[slide_max]' | json }}
+    };
+    theme.settings = {
+      cartType: {{ settings.cart_type | json }},
+      gridType: {{ settings.collection_products_grid | json }}
+    }; 
+  </script>
+
+  {% include 'globo.filter.script' %}{{ 'jquery-2.2.3.min.js' | asset_url | script_tag }}
+  {{ 'jquery.matchHeight-min.js' | asset_url | script_tag }}
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }}
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+
+  <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+  <script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  {{ 'slick.js' | asset_url | script_tag }}
+  {{ 'vendor.js' | asset_url | script_tag }}
+
+  <!-- Header hook for plugins ================================================== -->
+  {{ content_for_header }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
+  {{ 'modernizr.min.js' | asset_url | script_tag }}
+
+  {% comment %}
+    If you store has customer accounts disabled, you can remove the following JS file
+  {% endcomment %}
+  {% if request.page_type contains 'customers/' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+  <!-- Opinew ------>
+{% render 'opinew_head' %}
+
+{{ 'recipes.scss.css' | asset_url | stylesheet_tag }}
+{% render 'recipes-custom-css' %}
+{% render 'opinew_head' %}  
+<meta name="facebook-domain-verification" content="oxkpzula6nsifk3n71oegbohjr3mju" />  
+  <!-- Optimonk ------>
+  <script type="text/javascript">
+      (function(e,a){
+          var t,r=e.getElementsByTagName("head")[0],c=e.location.protocol;
+          t=e.createElement("script");t.type="text/javascript";
+          t.charset="utf-8";t.async=!0;t.defer=!0;
+          t.src=c+"//front.optimonk.com/public/"+a+"/js/preload.js";r.appendChild(t);
+      })(document,"60848");
+  </script>
+  <meta name="facebook-domain-verification" content="tadt8knyv2mlbnti08zcljvb5bwcdu" />
+  <!-- Hotjar ------>
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2313420,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <!-- Marker.io ------>
+  <script>
+    window.markerConfig = {
+      destination: '60baadb564b9ea6ed6f50327', 
+    };
+  </script>
+  <script>
+  !function(e,r,t){if(!e.__Marker){e.__Marker={};var a=[],s={__cs:a};for(const e of["show","hide","isVisible","capture","cancelCapture","unload","reload","isExtensionInstalled","setReporter","on","off"])s[e]=function(){var r=Array.prototype.slice.call(arguments);r.unshift(e),a.push(r)};e.Marker=s;var n=r.createElement("script");n.async=1,n.src="https://edge.marker.io/latest/shim.js";var o=r.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o)}}(window,document);
+  </script>
+<meta name="facebook-domain-verification" content="oxkpzula6nsifk3n71oegbohjr3mju" />
+
+  <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '243054460695850');
+    fbq('track', 'PageView');
+    fbq('track','Purchase');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=243054460695850&ev=PageView&noscript=1"
+    /></noscript>
+  <!-- End Facebook Pixel Code -->     
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36939133-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36939133-1');
+</script>
+
+  <!-- Google Tag Manager BOLD -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KBVH7C9');</script>   
+  <!-- End Google Tag Manager -->
+  <!-- Google Tag Manager Retired
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WC94HQF');</script> -->
+  <!-- End Google Tag Manager -->
+  <!-- Start VWO Async SmartCode -->
+    <script type='text/javascript'>
+    window._vwo_code = window._vwo_code || (function(){
+    var account_id=619605,
+    settings_tolerance=2000,
+    library_tolerance=2500,
+    use_existing_jquery=false,
+    is_spa=1,
+    hide_element='body',
+
+    /* DO NOT EDIT BELOW THIS LINE */
+    f=false,d=document,code={use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){
+    window.settings_timer=setTimeout(function () {_vwo_code.finish() },settings_tolerance);var a=d.createElement('style'),b=hide_element?hide_element+'{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}':'',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&f='+(+is_spa)+'&r='+Math.random());return settings_timer; }};window._vwo_settings_timer = code.init(); return code; }());
+    </script>
+  <!-- End VWO Async SmartCode -->
+  
+{% include "onvoard-initialize-head" %}
+
+
+ {% render 'giftship' %} 
+
+</head>
+
+{% comment %}
+  Add the page template as a class for easy page or template specific styling.
+{% endcomment %}
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ request.page_type | handle }}">
+<!-- Google Tag Manager (noscript) Retired
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WC94HQF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+<!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) BOLD -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBVH7C9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  {% section 'header' %}
+
+  <div id="CartDrawer" class="drawer drawer--right drawer--has-fixed-footer">
+    <div class="drawer__fixed-header">
+      <div class="drawer__header">
+        <div class="drawer__title">{{ 'cart.general.title' | t }}</div>
+        <div class="drawer__close">
+          <button type="button" class="icon-fallback-text drawer__close-button js-drawer-close">
+            <span class="icon icon-x" aria-hidden="true"></span>
+            <span class="fallback-text">{{ 'cart.general.close_cart' | t }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="drawer__inner">
+      <div class="cart-shipping__wrapper">
+        <div class="ov-app ov-app-aov-progress-bar" data-app-id="apb_ewpr9txx5ckk3n1" data-app="aov-progress-bar"></div>
+      </div>
+
+      <div id="CartContainer" class="drawer__cart"></div>
+      <div id="fsb_placeholder" class="mt-2"></div>
+    </div>
+  </div>
+
+  <div id="PageContainer" class="page-container">
+    <main class="main-content" role="main">
+      {% unless request.page_type == "index" %}
+
+      {% endunless %}
+        {{ content_for_layout }}
+      {% unless request.page_type == "index" %}
+       
+      {% endunless %}
+    </main>
+    {% section 'social-feed' %}
+    {% section 'footer' %}
+
+  </div>
+
+  {% comment %}
+    Template-specific js
+  {% endcomment %}
+  <script>
+    {% if resetPassword %}
+      $(function() {
+        timber.initCache();
+        timber.resetPasswordSuccess();
+      });
+    {% endif %}
+  </script>
+
+  {% comment %}
+    Ajaxify your cart with this plugin.
+    Documentation:
+      - http://shopify.com/timber#ajax-cart
+  {% endcomment %}
+  {% if settings.cart_type == 'drawer' %}
+    {% include 'ajax-cart-template' %}
+  {% endif %}
+
+  {% if request.page_type == 'product' or request.page_type == 'index' %}
+      <script>
+        // Override default values of shop.strings for each template.
+        // Alternate product templates can change values of
+        // add to cart button, sold out, and unavailable states here.
+        theme.productStrings = {
+          addToCart: {{ 'products.product.add_to_cart' | t | json }},
+          soldOut: {{ 'products.product.sold_out' | t | json }},
+          unavailable: {{ 'products.product.unavailable' | t | json }}
+        }
+      </script>
+    {% endif %}
+
+  <div id="SearchModal" class="mfp-hide">
+    {% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--modal' %}
+  </div>
+  <ul hidden>
+    <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
+    <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
+    <li id="a11y-slideshow-info">{{ 'home_page.slideshow.navigation_instructions' | t }}</li>
+  </ul>
+  {{ 'ajaxinate.min.js' | asset_url | script_tag }}
+{% include 'globo.filter.action' %}
+{% render 'recipes-static' %}
+
+<!-- **BEGIN** Hextom FSB Integration // Main Include - DO NOT MODIFY -->
+    {% render 'hextom_fsb_main', product: product, customer: customer %}
+    <!-- **END** Hextom FSB Integration // Main Include - DO NOT MODIFY -->
+{% render 'th-subscription-scripts' %} 
+{% include "onvoard-appscripts" %}
+</body>
+</html>

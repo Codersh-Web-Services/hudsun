@@ -1,0 +1,139 @@
+<div class="collection__main">
+    <!-- COLLECTION SIDEBAR -->
+    {%- capture categories -%}
+  {%- for tag in collections[collection.handle].tags -%}
+    {%- if tag contains 'categories' -%}
+      {%- assign tag_patterns = tag | split: '_' -%}
+
+      <li class="collection-sidebar__filter-item main-filter" data-tag="{{ tag | handle }}">{{ tag_patterns[1] }}</li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- capture filters -%}
+  {%- assign filter_title = '' -%}
+  {%- assign div_opened = 0 -%}
+  {%- assign div_closed = 0 -%}
+
+  {%- for tag in collection.all_tags -%}
+    {%- unless tag contains 'categories' or tag contains 'display' -%}
+      {%- assign tag_patterns = tag | split: '_' -%}
+      {%- assign heading = tag_patterns[0] -%}
+      {%- assign value = tag_patterns[1] -%}
+
+      {%- if value != blank -%}
+
+        {%- if heading != filter_title -%}
+          {%- if filter_title != blank -%}
+            </ul>
+            </div>
+
+            {%- assign div_closed = div_closed | plus: 1 -%}
+          {%- endif -%}
+
+          <div class="collection-sidebar__additional-filter" data-filter="{{ tag_patterns[0] }}">
+            <h3 class="collection-sidebar__filter-title accordion-heading">{{ heading }} <i class="fa fa-plus" aria-hidden="true"></i></h3>
+            <ul class="collection-sidebar__filter-items accordion-content">
+
+          {%- assign filter_title = heading -%}
+          {%- assign div_opened = div_opened | plus: 1 -%}
+        {%- endif -%}
+
+        <li class="collection-sidebar__filter-item" data-tag="{{ tag | handle }}">{{ tag_patterns[1] }}</li>
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+
+  {%- if div_opened != div_closed -%}
+     </ul>
+     </div>
+  {%- endif -%}
+{%- endcapture -%}
+
+
+{%- if categories != blank or filters != blank -%}
+  <section class="collection-sidebar" data-collection-url="https://{{ shop.domain }}{{ collection.url }}" data-section-id="collection-sidebar" data-section-type="collection-sidebar">
+    <h3 class="collection-sidebar__heading accordion-heading">Filters <i class="fa fa-plus" aria-hidden="true"></i></h3>
+
+    <div class="collection-sidebar__content accordion-content">
+      {%- if categories != blank -%}
+        <div class="collection-sidebar__categories-filter">
+          <h3 class="collection-sidebar__filter-title">Categories</h3>
+          <ul class="collection-sidebar__filter-items">
+            {{ categories }}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      {%- if filters != blank -%}
+        <h3 class="collection-sidebar__filter-heading">Refine your selection</h3>
+        {{ filters }}
+      {%- endif -%}
+    </div>
+  </section>
+{%- endif -%}
+    <!-- COLLECTION SIDEBAR END -->
+    
+    
+    
+    
+    <!-- COLLECTION GRID -->
+  <div class="collection-grid {% if categories == blank and filters == blank %}full-width{% endif %}">
+
+    <div class="collection-grid__header">
+      <div class="collection-grid__products-count">
+        <!-- @TODO add change products count -->
+        <span class="js-product-grid__count">{{ collection.products_count }}</span> products | <a href="{{ collection.url }}">See all</a>
+      </div>
+
+      <div class="collection-grid__sort-by">
+        <label for="sort-by">Sort by:</label>
+        <select id="sort-by">
+          <option value="manual">Featured</option>
+          <option value="price-ascending">Price: Low to High</option>
+          <option value="price-descending">Price: High to Low</option>
+          <option value="title-ascending">A-Z</option>
+          <option value="title-descending">Z-A</option>
+          <option value="created-ascending">Oldest to Newest</option>
+          <option value="created-descending">Newest to Oldest</option>
+          <option value="best-selling">Best Selling</option>
+        </select>
+        <i class="fa fa-angle-down"></i>
+      </div>
+    </div>
+
+    <section class="four-col-prod">
+      <div class="container">
+        
+          {%- assign products_count = 0 -%}
+          <div id="AjaxinateLoop" class="collection-grid__products" data-products-count="{{ collection.products_count }}">
+            <div class="row">
+            {% if collection.products_count > 0 %}
+              {% for product in collection.products %}
+                {%- assign products_count = products_count | plus: 1 -%}
+
+                {% assign count = count | plus: 1 %}
+                <div class="col-sm-6 col-lg-3">
+                    {% include 'product-tile-item-custom' %}
+                </div>
+              {% endfor %}
+            {% else %}
+              <p class="collection-grid__empty">{{ 'collections.general.no_matches' | t }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+</div>
+  
+  <!-- COLLECTION GRID END -->
+  </div>
+
+  
+
+
+  <script type="text/javascript">
+
+  </script>

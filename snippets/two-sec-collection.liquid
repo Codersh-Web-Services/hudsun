@@ -1,0 +1,83 @@
+<div class="row align-items-center">
+  {% if collection.title == "Candy" %}
+    <div class="col-lg-6 p-0">
+      <img alt="" src="{{section.settings.Sec_bg_candy | img_url:''}}" class="img-fluid">
+    </div>
+    <div class="col-lg-6 cten p-0">
+      <div class="ctent-wrap text-center">
+        <h2>{{section.settings.sec_heading_candy}}</h2>
+        <p>{{section.settings.sec_desc_candy}}</p>
+        <div class="cta">
+          <a href="{{section.settings.cta_link_candy}}" class="btn">
+            {{section.settings.cta_text_candy}}
+          </a>
+        </div>
+      </div>
+    </div>
+  
+  {% elsif collection.title == "Shelled Pecans" %}
+    <div class="col-lg-6 p-0">
+        <img alt="" src="{{section.settings.Sec_bg_shelled | img_url:''}}" class="img-fluid">
+      </div>
+      <div class="col-lg-6 cten p-0">
+        <div class="ctent-wrap text-center">
+          <h2>{{section.settings.sec_heading_shelled}}</h2>
+          <p>{{section.settings.sec_desc_shelled}}</p>
+          <div class="cta">
+            <a href="{{section.settings.cta_link_shelled}}" class="btn">
+              {{section.settings.cta_text_shelled}}
+            </a>
+          </div>
+        </div>
+      </div>
+
+  {% elsif collection.title == "In Shell Pecans" %}
+    <div class="col-lg-6 p-0">
+        <img alt="" src="{{section.settings.Sec_bg_inshell | img_url:''}}" class="img-fluid">
+      </div>
+      <div class="col-lg-6 cten p-0">
+        <div class="ctent-wrap text-center">
+          <h2>{{section.settings.sec_heading_inshell}}</h2>
+          <p>{{section.settings.sec_desc_inshell}}</p>
+          <div class="cta">
+            <a href="{{section.settings.cta_link_inshell}}" class="btn">
+              {{section.settings.cta_text_inshell}}
+            </a>
+          </div>
+        </div>
+      </div>
+
+  {% elsif collection.title == "Gift Boxes" %}
+    <div class="col-lg-6 p-0">
+        <img alt="" src="{{section.settings.Sec_bg_giftbox | img_url:''}}" class="img-fluid">
+      </div>
+      <div class="col-lg-6 cten p-0">
+        <div class="ctent-wrap text-center">
+          <h2>{{section.settings.sec_heading_giftbox}}</h2>
+          <p>{{section.settings.sec_desc_giftbox}}</p>
+          <div class="cta">
+            <a href="{{section.settings.cta_link_giftboxes}}" class="btn">
+              {{section.settings.cta_text_giftboxes}}
+            </a>
+          </div>
+        </div>
+      </div>
+
+  {% else %}
+    <div class="col-lg-6 p-0">
+      <img alt="" src="{{section.settings.Sec_bg | img_url:''}}" class="img-fluid">
+    </div>
+    <div class="col-lg-6 cten p-0">
+      <div class="ctent-wrap text-center">
+        <h2>{{section.settings.sec_heading}}</h2>
+        <p>{{section.settings.sec_desc}}</p>
+        <div class="cta">
+          <a href="{{section.settings.cta_link}}" class="btn">
+            {{section.settings.cta_text}}
+          </a>
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+</div>

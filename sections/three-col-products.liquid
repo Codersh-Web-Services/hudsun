@@ -1,0 +1,50 @@
+<section class="four-col-prod">
+	<h2 class="mb-3">{{ section.settings.main_heading }}</h2>
+	<div class="container">
+		<div class="row">
+			<div class="container product-inner-wrap"> 
+      			<div class="row justify-content-center">
+					{% assign count = 0 %}
+					{% for product in collections.home-featured-products.products %}
+						{% assign count = count | plus: 1 %}
+						<div class="col-sm-6 col-lg-4">
+								{% include 'product-tile-item-custom' %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<style type="text/css">
+	.four-col-prod:after {
+		background-image: url({{ 'white-yellow-seperator.png' | asset_img_url: '' }});	
+	}
+</style>
+
+{% schema %}
+  {
+    "name": "Featured Products",
+    "settings": [ 
+    	{
+		   "type":      "header",
+		   "info":      "Featured products can be set with the collection Home Featured Product",
+		   "content":   "Featured Products"
+		},
+		{
+			"type": "text",
+			"id": "main_heading",
+			"label": "Section Heading"
+		}
+
+    ] 
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+ 
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,141 @@
+
+<section class="two-sec-bg position-relative">
+	<div class="container-fluid">
+		<div class="row align-items-center">
+          <div id="sample">
+            <div class="vidyard-player-embed" data-uuid="LSXSzr7WbqGeeFdSFuYEXy" data-v="4" data-type="lightbox">
+            </div>
+          </div>
+          <div class="col-lg-6 p-0">
+            <img src="{{section.settings.Sec_bg | img_url:''}}" class="img-fluid" alt="{{section.settings.Sec_bg.alt | escape }}">
+          </div>
+          <div class="col-lg-6 cten p-0">
+            <div class="ctent-wrap text-center"> 
+              <h2>{{section.settings.sec_heading}}</h2>
+              <p>{{section.settings.sec_desc}}</p>
+              <ul> 
+                {% if section.settings.cta_text2 != blank %}
+                  <li>
+                    <button onclick="launchLightbox('LSXSzr7WbqGeeFdSFuYEXy')" class="btn outline-cta">{{section.settings.cta_text2}}</button>
+                  </li>
+                {% endif %}
+                {% if section.settings.cta_text != blank %}
+                  <li>
+                    <div class="cta">
+                      <a href="{{section.settings.cta_link}}" class="btn">
+                        {{section.settings.cta_text}}
+                      </a>
+                    </div>
+                  </li>
+                {% endif %}
+               
+              </ul>
+              
+            </div>
+          </div>
+		</div>
+	</div>
+
+  <div class="float-img">
+    <img src="https://cdn.shopify.com/s/files/1/0277/0118/2512/files/leaves.png?v=1621262471">
+  </div>
+
+</section>
+
+<style type="text/css">
+  #vidyard-popbox {
+    width: 100% !important;
+    max-width: 900px;
+    max-height: 505px!important;
+  }
+  .two-sec-bg ul {
+    padding: 0;
+    margin: 0;
+  }
+  .two-sec-bg ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+  }
+  .two-sec-bg ul li .cta a {
+    border: 2px solid #fa931b;
+    color: #fa931b;
+    background-color: #fa931b00;
+  }
+  .two-sec-bg ul li .cta a:hover {
+    border: 2px solid #dd7905;
+    color: #dd7905;
+    
+  }
+  .two-sec-bg ul li .cta a:focus,
+  .two-sec-bg ul li .cta a:focus-visible {
+    outline: 0 !important;
+  }
+  .outline-cta {
+    font-family: Raleway,sans-serif;
+    background-color: #fa931b;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 100%;
+    padding: 13px 20px;
+  }
+</style>
+
+<script type="text/javascript">
+  function launchLightbox(val) {
+    var players = VidyardV4.api.getPlayersByUUID(val);
+    var player = players[0];
+    player.showLightbox();
+  }
+</script> 
+
+{% schema %}
+  {
+  	"name": "Our Story",
+    "settings": [
+    	{
+		   "type":      "header",
+		   "content":   "Sections"
+		  },
+	{
+      "type": "image_picker",
+      "id": "Sec_bg",
+      "label": "Section Image"
+    },
+	  {
+      "type": "text",
+      "id": "sec_heading",
+      "label": "Sections Title"
+    },
+    {
+      "type": "textarea",
+      "id": "sec_desc",
+      "label": "Sections Description"
+    },
+    {
+       "type":      "header",
+       "content":   "Main CTA"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link"
+    },
+    {
+       "type":      "header",
+       "content":   "Video Pop up CTA"
+    },
+    {
+      "type": "text",
+      "id": "cta_text2",
+      "label": "CTA text"
+    }
+    ]
+  }
+{% endschema %}

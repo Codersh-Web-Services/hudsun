@@ -1,0 +1,66 @@
+<div class="container-fluid"> 
+  
+  <div class="product-details row align-items-center">
+  <div class="col-lg-4 p-0">
+    <img src="{{section.settings.image | img_url:''}}" class="img-fluid" alt="{{section.settings.image.alt}}">
+  </div>
+  <div class="col-lg-8 cten p-0">
+    <div class="ctent-wrap">
+      <h3>{{section.settings.title}}</h3>
+      <p>{{section.settings.subtext}}</p>
+      <br>
+      <h3 class="product-title">{{section.settings.name}}</h3>
+      <div class="cta">
+      <a class="btn" onclick='window.location.url="{{section.settings.cta_link}}"'>{{section.settings.cta_text}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% schema %}
+{
+"name": "Taste the difference",
+"settings": [
+
+{
+"type": "image_picker",
+"id" : "image",
+"label" : "Image"
+},
+{
+"type": "text",
+"id" : "title",
+"label" : "Title"
+},
+{
+"type": "text",
+"id" : "subtext",
+"label" : "Paragraph"
+},
+{
+"type": "text",
+"id" : "name",
+"label" : "Name of the product"
+},
+{
+"type": "text",
+"id" : "cta_text",
+"label" : "Cta Text"
+},
+{
+"type": "text",
+"id" : "cta_link",
+"label" : "Cta Link"
+}
+
+
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

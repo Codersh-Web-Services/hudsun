@@ -1,0 +1,49 @@
+<div class="default-page-wrap">
+  {% if section.settings.main_bg != blank  %}
+  <div class="dpw-header" style="background-image:url('{{ section.settings.main_bg | img_url: '' }}');">
+  {% else %}
+    <div class="dpw-header">
+  {% endif %}
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            {% if section.settings.ov_title != blank  %}
+               <h1>{{ section.settings.ov_title }}</h1>
+            {% else %}
+              <h1>{{ collection.title }}</h1>
+            {% endif %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="filter-main-wrap">
+  <div class="container">
+    <div data-sectionId="{% if section.id %}{{section.id}}{% endif %}" data-settings='{% if section.settings %}{{section.settings | json}}{% endif %}' id="gf-products" class="grid grid-collage">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Default Page",
+    "settings": [
+      {
+       "type":      "header",
+       "content":   "Section Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_bg",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "ov_title",
+      "label": "Override Title"
+    }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,41 @@
+<!-- /sections/article-product-feed.liquid -->
+<div class="default-collection col-temp">
+	<div class="four-col-prod custom">
+		<div class="container product-inner-wrap">
+			<div class="row">
+		        <div class="col-12 new-col">
+                  	<h2 class="mb-0">{{ section.settings.sec_heading }}</h2>
+		          	<div class="container">
+		            	<div class="row justify-content-center">
+		            		<div class="custom-width">
+			            		{% for product in collections.home-featured-products.products limit:3 %}
+				            		<div class="col-sm-6 col-lg-4">
+				            			{% include 'product-tile-item-custom' %}
+				            		</div>
+			            		{% endfor %}
+		            		</div>
+		            	</div>
+		        	</div>
+		    	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Featured Products",
+    "settings": [ 
+    	{
+		   "type":      "header",
+		   "content":   "Featured Products"
+		},
+		{
+			"type": "text",
+			"id": "sec_heading",
+			"label": "Section Heading"
+		}
+
+    ] 
+  }
+{% endschema %}

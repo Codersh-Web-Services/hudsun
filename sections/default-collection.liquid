@@ -1,0 +1,577 @@
+{% assign blog_handle = 'recipes' %}
+
+
+
+<div class="default-page-wrap">
+
+  {% if collection.image != blank  %}
+
+    <div class="dpw-header" style="background-image:url('{{ collection | img_url: '' }}');">
+
+  {% else %}
+
+    <div class="dpw-header">
+
+  {% endif %}
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-12">
+
+          <h1>{{ collection.title }}</h1>
+
+          {% comment %}
+
+          {% if collection.title == "Kosher" %}
+
+            <ul class="wlogo">
+
+              <li class="logo-wrap"><img src="{{ 'kosher-w.png' | asset_url }}"></li>
+
+              <li class="lheading"><h1>{{ collection.title }}</h1></li>
+
+            </ul>
+
+
+
+          {% elsif collection.title == "USDA Organic" %}
+
+            <ul class="wlogo">
+
+              <li class="logo-wrap"><img src="{{ 'organic-w.png' | asset_url }}"></li>
+
+              <li class="lheading"><h1>{{ collection.title }}</h1></li>
+
+            </ul>
+
+
+
+          {% else %} 
+
+            
+
+          {% endif %}
+
+          {% endcomment %}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  </div>
+
+
+
+
+
+<section class="default-collection col-temp">
+
+  {% assign current_collection = collection.handle %}
+
+  <div class="four-col-prod custom">
+
+    <div class="container product-inner-wrap">
+
+      <div class="row">
+
+        <div class="col-12 new-col">
+
+          <div class="container">
+
+            <div class="row justify-content-center">
+
+              {% assign count = 0 %}
+
+              {% for product in collections[current_collection].products %}
+
+              {% assign count = count | plus: 1 %}
+
+                <div class="col-md-6 col-lg-3 mb-5 mb-md-5">
+
+                  {% include 'product-collection' %}
+
+                </div>
+
+              {% endfor %}
+
+              {% assign page_handle = collection.handle %}
+
+                {% for block in section.blocks %}
+
+                  {% if block.settings.collection_choose == page_handle %}
+
+
+                    <div class="col-md-6 col-lg-3 mb-5 mb-md-5">
+
+                
+                    <section class="featured-recipe-last-col">
+
+                        {% for article in blogs.recipes.articles %}
+
+                        {% assign article_content = article.excerpt_or_content %}
+
+                          {% if block.settings.article_choose == article.handle %}
+
+                                {% include 'recipe-col' %}
+
+                          {% endif %}
+
+                        {% endfor %}
+
+                    </section>
+
+                    </div>
+
+                  {% endif %}
+
+                {% endfor %}
+
+              
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="two-sec-bg position-relative collection-two-sec">
+
+  <div class="container-fluid">
+
+    {% include 'two-sec-collection' %}
+
+  </div>
+
+</section>
+
+
+
+<section class="prod--rec">
+
+  {% include 'related-products' %}
+
+</section>
+
+
+
+<section class="featured-recipes-global">
+
+  <div class="container">
+
+    {% include 'featured-recipes-global' %}
+
+  </div>
+
+</section>
+
+
+
+
+
+{% if collection.image != blank  %}
+
+<style type="text/css">
+
+.default-page-wrap:after {
+
+  content: '';
+
+  background-color: #00000010;
+
+  position: absolute;
+
+  width: 100%;
+
+  height: 100%;
+
+  left: 0;
+
+  top: 0;
+
+  z-index: 1;
+
+}
+
+</style>
+
+{% endif %}
+
+
+
+{% schema %}
+
+  {
+
+    "name": "Edit Content",
+
+    "settings": [
+
+      {
+
+       "type":      "header",
+
+       "content":   "Two Columns"
+
+    },
+
+    {
+
+       "type":      "header",
+
+       "content":   "Candy"
+
+    },
+
+    {
+
+      "type": "image_picker",
+
+      "id": "Sec_bg_candy",
+
+      "label": "Candy Section Image"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "sec_heading_candy",
+
+      "label": "Candy Section Title"
+
+    },
+
+    {
+
+      "type": "textarea",
+
+      "id": "sec_desc_candy",
+
+      "label": "Candy Section Description"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "cta_text_candy",
+
+      "label": "Candy CTA text"
+
+    },
+
+    {
+
+      "type": "url",
+
+      "id": "cta_link_candy",
+
+      "label": "Candy CTA link"
+
+    },
+
+    {
+
+       "type":      "header",
+
+       "content":   "Shelled Pecans"
+
+    },
+
+     {
+
+      "type": "image_picker",
+
+      "id": "Sec_bg_shelled",
+
+      "label": "Shelled Section Image"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "sec_heading_shelled",
+
+      "label": "Shelled Section Title"
+
+    },
+
+    {
+
+      "type": "textarea",
+
+      "id": "sec_desc_shelled",
+
+      "label": "Shelled Section Description"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "cta_text_shelled",
+
+      "label": "Shelled CTA text"
+
+    },
+
+    {
+
+      "type": "url",
+
+      "id": "cta_link_shelled",
+
+      "label": "Shelled CTA link"
+
+    },
+
+    {
+
+       "type":      "header",
+
+       "content":   "In Shell Pecans"
+
+    },
+
+     {
+
+      "type": "image_picker",
+
+      "id": "Sec_bg_inshell",
+
+      "label": "In Shell Section Image"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "sec_heading_inshell",
+
+      "label": "In Shell Section Title"
+
+    },
+
+    {
+
+      "type": "textarea",
+
+      "id": "sec_desc_inshell",
+
+      "label": "In Shell Section Description"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "cta_text_inshell",
+
+      "label": "In Shell CTA text"
+
+    },
+
+    {
+
+      "type": "url",
+
+      "id": "cta_link_inshell",
+
+      "label": "In Shell CTA link"
+
+    },
+
+    {
+
+       "type":      "header",
+
+       "content":   "Gift Boxes"
+
+    },
+
+    {
+
+      "type": "image_picker",
+
+      "id": "Sec_bg_giftbox",
+
+      "label": "Gift Boxes Section Image"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "sec_heading_giftbox",
+
+      "label": "Gift Boxes Section Title"
+
+    },
+
+    {
+
+      "type": "textarea",
+
+      "id": "sec_desc_giftbox",
+
+      "label": "Gift Boxes Section Description"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "cta_text_giftboxes",
+
+      "label": "Gift Boxes CTA text"
+
+    },
+
+    {
+
+      "type": "url",
+
+      "id": "cta_link_giftboxes",
+
+      "label": "Gift Boxes CTA link"
+
+    },
+
+    {
+
+      "type": "image_picker",
+
+      "id": "Sec_bg",
+
+      "label": "Section Image"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "sec_heading",
+
+      "label": "Sections Title"
+
+    },
+
+    {
+
+      "type": "textarea",
+
+      "id": "sec_desc",
+
+      "label": "Sections Description"
+
+    },
+
+    {
+
+      "type": "text",
+
+      "id": "cta_text",
+
+      "label": "CTA text"
+
+    },
+
+    {
+
+      "type": "url",
+
+      "id": "cta_link",
+
+      "label": "CTA link"
+
+    },
+
+    {
+
+       "type":      "header",
+
+       "content":   "Related Products"
+
+    },
+
+    {
+
+      "id": "related_title",
+
+      "type": "text",
+
+      "label": "Section title",
+
+      "default": "Other fine products"
+
+    }
+
+    ],
+
+    "blocks": [
+
+      {
+
+        "type": "feature_recipe",
+
+        "name": "Featured Recipe",
+
+        "settings": [
+
+          {
+
+            "type": "collection",
+
+            "id": "collection_choose",
+
+            "label": "Choose a Collection"
+
+          },
+
+          {
+
+            "type": "article",
+
+            "id": "article_choose",
+
+            "label": "Choose Featured Recipe" 
+
+          }
+
+        ]
+
+      }
+
+    ]
+
+  }
+
+{% endschema %}

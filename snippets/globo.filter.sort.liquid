@@ -1,0 +1,96 @@
+{% raw %}
+{% assign root_url = {% endraw %}"{%- if routes.root_url != "/" -%}{{ routes.root_url }}{%- endif -%}"{% raw %} %}
+<div id="gf-controls-container">
+    {% if pagination.total > 0 %}
+  <div class="gf-actions">
+    <div class="gf-filter-trigger">
+      <h3 href="javascript:void(0)" class="gf-refine-toggle-mobile" tabindex="0">
+        <span onclick="globofilter.toggleCanvas()"><i class="fa fa-tasks" aria-hidden="true"></i> {{translation.filter.filter_by | default: "Filter by"}}{% if has_filter %}{% endif %}</span>
+      </h3>
+    </div>
+
+    <span class="gf-summary">
+      {% assign plurality = translation.search.products | default: "Products" %}
+      {% assign singular = translation.search.product | default: "Product" %}
+      <b>{{pagination.total}}</b> {{pagination.total | pluralize: singular, plurality}}
+    </span>
+
+    <div class="gf-filter-selection">
+                        <div class="sort-by limit-by hidden-xs">
+        <label for="setLimit" class="sort-by-toggle" role="button" tabindex="0" aria-expanded="false">{{translation.product.limit | default: "Show"}}</label>
+        <select id="setLimit" class="sortby-select" onchange="setLimit(this.value); return false;">
+          <option selected value="12">12</option><option  value="24">24</option><option  value="48">48</option>        </select>
+      </div>
+                        {% assign available_sort  = 'best-selling,title-ascending,title-descending,price-ascending,price-descending' | split: "," %}
+      {% assign default_sort_by = '{% endraw %}{{collection.default_sort_by}}{% raw %}' %}
+      <div class="sort-by">
+        <label for="changeSortBy" class="sort-by-toggle" role="button" tabindex="0" aria-expanded="false">{{translation.sort.sort_by | default: "Sort by"}}</label>
+        <select id="changeSortBy" class="sortby-select" onchange="changeSortBy(this.value); return false;">
+          {% if available_sort contains 'best-selling'       or default_sort_by == 'best-selling' %}<option value="best-selling">{{translation.sort.best_selling | default: "Best Selling"}}</option>{% endif %}
+          {% if available_sort contains 'featured'           or default_sort_by == 'manual' %}<option value="manual">{{translation.sort.manually | default: "Featured"}}</option>{% endif %}
+          {% if available_sort contains 'stock-descending' %}<option value="stock-descending">{{translation.sort.availability_in_stock_first | default: "Availability"}}</option>{% endif %}
+          {% if available_sort contains 'title-ascending'    or default_sort_by == 'title-ascending' %}<option value="title-ascending">{{translation.sort.alphabetically_a_z | default: "Alphabetically, A-Z"}}</option>{% endif %}
+          {% if available_sort contains 'title-descending'   or default_sort_by == 'title-descending' %}<option value="title-descending">{{translation.sort.alphabetically_z_a | default: "Alphabetically, Z-A"}}</option>{% endif %}
+          {% if available_sort contains 'price-ascending'    or default_sort_by == 'price-ascending' %}<option value="price-ascending">{{translation.sort.price_low_to_high | default: "Price, low to high"}}</option>{% endif %}
+          {% if available_sort contains 'price-descending'   or default_sort_by == 'price-descending' %}<option value="price-descending">{{translation.sort.price_high_to_low | default: "Price, high to low"}}</option>{% endif %}
+          {% if available_sort contains 'created-descending' or default_sort_by == 'created-descending' %}<option value="created-descending">{{translation.sort.date_new_to_old | default: "Date, new to old"}}</option>{% endif %}
+          {% if available_sort contains 'created-ascending'  or default_sort_by == 'created-ascending' %}<option value="created-ascending">{{translation.sort.date_old_to_new | default: "Date, old to new"}}</option>{% endif %}
+          {% if available_sort contains 'sale-descending' %}<option value="sale-descending">{{translation.sort.sale_off | default: "% Sale off"}}</option>{% endif %}
+        </select>
+      </div>
+          </div>
+
+    <div class="globo-selected-items-wrapper visible-xs">
+      {% if has_filter and filters %}
+      <ul class="globo-selected-items">
+        {% capture selected_item_html %}
+        {% assign filter_count = 0 %}
+        {% for filter in filters %}
+          {% if filter.is_selected %}
+            {% if filter.style == 'Slider' %}
+              {% assign filter_count = filter_count | plus: 1 %}
+              <li class="selected-item gf-option-label">
+                <a onclick="removeFilter({{filter.id}})" href="javascript:;">
+                  <span class="selected-item">
+                    <strong>
+                      {% if filter.attribute == 'Price' %}
+                        <span class="money">{{filter.values.min | times: 100 | money}}</span> - <span class="money">{{filter.values.max | times: 100 | money}}</span>
+                      {% elsif filter.attribute == 'Percent Sale' %}
+                        {{filter.values.min}}% - {{filter.values.max}}%
+                      {% else %}
+                        {{filter.values.min}} - {{filter.values.max}}
+                      {% endif %}
+                    </strong>
+                  </span>
+                  <span class="gf-clear">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11.414 10l6.293-6.293a1 1 0 10-1.414-1.414L10 8.586 3.707 2.293a1 1 0 00-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 101.414 1.414L10 11.414l6.293 6.293A.998.998 0 0018 17a.999.999 0 00-.293-.707L11.414 10z" fill="#5C5F62"/></svg>
+                  </span>
+                </a>
+              </li>
+            {% else %}
+              {% for value in filter.values %}
+                {% if value.selected %}
+                  {% assign filter_count = filter_count | plus: 1 %}
+                  <li class="selected-item gf-option-label">
+                    <a onclick="removeFilterValue({{filter.id}},'{{value.value | replace:"'", "\'" | escape_once}}')" href="javascript:;">
+                      <span class="selected-item"><strong>{{value.label}}</strong></span>
+                      <span class="gf-clear"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11.414 10l6.293-6.293a1 1 0 10-1.414-1.414L10 8.586 3.707 2.293a1 1 0 00-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 101.414 1.414L10 11.414l6.293 6.293A.998.998 0 0018 17a.999.999 0 00-.293-.707L11.414 10z" fill="#5C5F62"/></svg></span>
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% endcapture %}
+        {% if filter_count > 1 %}
+        <li class="selected-item gf-option-label"><a href="javascript:;" onclick="clearAllFilter()" class="clear-refinements">{{ translation.filter.clear_all | default: "Clear all"}}</a></li>
+        {% endif %}
+        {{selected_item_html}}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endraw %}

@@ -1,0 +1,83 @@
+{% paginate search.results by 12 %}
+<section class="search-custom">
+  <div class="heading-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          {% if search.performed %}
+            {% if search.results_count == 0 %}
+                <h1 class="text-center">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
+              {% else %}
+                <h1 class="text-center">{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
+              {% endif %}
+            {% else %}
+              <h1 class="text-center">{{ 'general.search.title' | t }}</h1>
+          {% endif %}
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="results-section">
+    <div class="container">
+        {% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--page' %}
+
+        <div data-sectionId="{% if section.id %}{{section.id}}{% endif %}" data-settings='{% if section.settings %}{{section.settings | json}}{% endif %}' id="gf-products" class="row">
+          {% assign count = 0 %}
+            {% if search.performed %}
+              
+              {% for item in search.results %}
+
+                {% assign article_content = item.content %}
+                {% if item.object_type == 'product' %}
+                    {% assign count = count | plus: 1 %}
+                    {% assign product = item %}
+                    
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-lg-0 mb-4">
+                      <div class="four-col-prod pb-0"> 
+                        <div class="product-inner-wrap">
+                          {% include 'product-tile-item-search-custom' %}
+                        </div>
+                      </div>
+                    </div>
+                  {% else %}
+                  {% comment %}
+                  <div class="col-sm-6 col-md-4 col-lg-3 p-lg-0 mb-4">
+                    <div class="thumb-container">
+                      <div class="article__featured-image-link" style="background-image:url('{{ item.image | img_url: '400x400' }}');">
+
+                        </div>
+                        <div class="grid-item__hover"></div>
+                        <a href="{{ item.url }}" class="floatlink"></a>
+                      </div>
+                    
+                      <div class="blog-body">
+                        <div data-mh="desc-body-wocta">
+                          <h2 class="h3">
+                            <a class="article__heading-link" href="{{ item.url }}">{{ item.title }}
+                            </a>
+                          </h2>
+                          <div class="article-content">
+                            {{ article_content | strip_html | truncatewords: 30 }}
+                          </div>
+                        </div>
+                          <div class="cta">
+                            <a href="{{ item.url }}" class="btn">Read more</a>
+                          </div>
+                      </div>
+                    </div>
+                    {% endcomment %}
+                  {% endif %}
+              {% endfor %}
+              
+        </div>
+        {% if paginate.pages > 1 %}
+            {% include 'pagination' %}
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endpaginate %}

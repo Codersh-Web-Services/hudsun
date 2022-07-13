@@ -1,0 +1,40 @@
+
+<div class="logos">
+  <div class="container">
+    <img src="{{section.settings.logo1 | img_url : "master" }}" alt="{{section.settings.logo1.alt }}">
+    <img src="{{section.settings.logo2 | img_url : "master" }}" alt="{{section.settings.logo2.alt }}">
+    <img src="{{section.settings.logo3 | img_url : "master" }}" alt="{{section.settings.logo3.alt }}">
+    <img src="{{section.settings.logo4 | img_url : "master" }}" alt="{{section.settings.logo4.alt }}">
+  </div>
+</div>
+{% schema %}
+{
+"name": "Logos",
+"settings": [{
+"type": "image_picker",
+"id": "logo1",
+"label": "benefit 1"
+},
+{
+"type": "image_picker",
+"id": "logo2",
+"label": "benefit 2"
+},
+{
+"type": "image_picker",
+"id": "logo3",
+"label": "benefit 3"
+},
+{
+"type": "image_picker",
+"id": "logo4",
+"label": "benefit 4"
+}]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

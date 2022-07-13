@@ -1,0 +1,103 @@
+{% assign page_handle = page.handle %}
+{% if section.blocks.size > 0 %}
+  {% for block in section.blocks %}
+    {% if block.settings.page_handle_id == page_handle %}
+      <div class="dpw-header bg-inline" style="background-image:url('{{ 'search-banner.jpg' | asset_url }}');">
+    {% else %}
+      <div class="dpw-header">
+    {% endif %}
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          {% if block.settings.ov_title != blank  %}
+             <h1>{{ block.settings.ov_title }}</h1>
+          {% else %}
+            <h1>{{ page.title }}</h1>
+          {% endif %}
+          
+        </div>
+      </div>
+    </div>
+    </div>
+
+    {% if block.settings.dark_bg != blank  %}
+      <style type="text/css">
+        .dpw-header:before {
+          content: '';
+          background-color: #000;
+          opacity: .{{ block.settings.opacity_value }};
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      </style>
+    {% endif %}
+
+  {% endfor %} 
+  
+{% else %}
+<div class="dpw-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+            <h1>{{ page.title }}</h1> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Default Page",
+    "settings": [
+      {
+       "type":      "header",
+       "content":   "Section Settings"
+    }
+
+    ],
+    "blocks": [
+          {
+            "type": "text_block",
+            "name": "Custom Hero Background",
+            "settings": [
+          {
+            "type": "page",
+            "id": "page_handle_id",
+            "label": "Select a Page"
+          },
+          {
+          "type": "image_picker",
+          "id": "hero_back_img",
+          "label": "Hero Background Image"
+          },
+          {
+            "type": "text",
+            "id": "ov_title",
+            "label": "Override Title"
+          },
+          {
+            "type": "checkbox",
+            "id": "dark_bg",
+            "label": "Enable Overlay"
+          },
+          {
+            "type": "range",
+            "id": "opacity_value",
+            "label": "Opacity",
+            "unit": "%",
+            "step": 1,
+            "default": 40,
+            "min": 0,
+            "max": 100
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

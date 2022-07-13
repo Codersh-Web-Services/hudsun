@@ -1,0 +1,5 @@
+<!-- Globo Filter Initialize App -->
+<script type="text/javascript">
+  {% if request.page_type contains 'collection' %}if(typeof globofilter !== 'undefined'){globofilter.initFilter();}{% else %}if(typeof globofilter !== 'undefined'){globofilter.revertFilter();}{% endif %}
+  if(typeof globofilter !== 'undefined'){globofilter.initSearch();}</script>
+<!-- End Globo Filter Initialize App -->

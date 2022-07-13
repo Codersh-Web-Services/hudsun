@@ -1,0 +1,105 @@
+<section class="circle-banner">
+	<div class="container">
+		<div class="row justify-content-center justify-content-center">
+			<div class="col-12">
+				<div class="c-container" style="background-image:url('{{ section.settings.section_background | img_url: '' }}');">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="main-section-ostory">
+	<div class="m1">
+		<div class="container">
+			<div class="row">	
+				<div class="col-12">
+					<p class="bhead">{{section.settings.sub_desc}}</p>
+					<h2>{{section.settings.title_text}}</h2>
+					<p>{{section.settings.main_desc}}</p>	
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="container-fluid sec-img" style="background-image:url('{{ section.settings.section_image | img_url: '' }}');">	
+	</div>
+	{% comment %}
+	<div class="m2">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>{{section.settings.sec_heading}}</h2>
+					<p>{{section.settings.sec_desc}}</p>
+					{% if section.settings.cta_title != blank %}
+		                <div class="cta">
+							<a href="{{section.settings.cta_link}}" class="btn">{{section.settings.cta_title}}</a>
+						</div>
+					{% endif %}
+				</div>
+			</div>	
+		</div>
+	</div>
+	{% endcomment %}
+	
+</section>
+ 
+{% schema %}
+  {
+  	"name": "Our Story",
+    "settings": [
+    	{
+		   "type":      "header",
+		   "content":   "Hero Section"
+		},
+		{
+			"type": "image_picker",
+			"id": "section_background",
+			"label": "Circle Banner Image"
+		},
+		{
+			"type": "textarea",
+			"id": "sub_desc",
+			"label": "Sub Heading"
+		},
+		{
+			"type": "text",
+			"id": "title_text",
+			"label": "Title Heading"
+		},
+		{
+		   "type":      "header",
+		   "content":   "Main Section"
+		},
+		{
+			"type": "richtext",
+			"id": "main_desc",
+			"label": "Sub Heading"
+		},
+		{
+			"type": "image_picker",
+			"id": "section_image",
+			"label": "Section Image"
+		},
+		{
+			"type": "text",
+			"id": "sec_heading",
+			"label": "Heading"
+		},
+		{
+			"type": "textarea",
+			"id": "sec_desc",
+			"label": "Description"
+		},
+		{
+			"type": "text",
+			"id": "cta_title",
+			"label": "CTA Title"
+		},
+		{
+			"type": "url",
+			"id": "cta_link",
+			"label": "CTA Title"
+		}
+    ]
+  }
+{% endschema %}

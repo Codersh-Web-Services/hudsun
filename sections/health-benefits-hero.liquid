@@ -1,0 +1,59 @@
+<section class="hero-main-wrap" data-stellar-background-ratio=".5"  style="background-image:url('{{ section.settings.hero_background | img_url: '' }}');">
+  <div class="container">
+    <div class="text-center">
+      <div class="hero-content">
+        <h1>{{ section.settings.main_hero_text }}</h1>
+        <p>{{ section.settings.main_hero_decription }}</p>
+
+        <div class="form-group">
+          <input type="tel" id="mobile-phone-number" placeholder="Mobile Phone Number"> 
+          <div class="cta">
+            <a href="{{ section.settings.main_hero_cta_link }}" class="btn">{{ section.settings.main_hero_cta_text }}</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Benefits Hero",
+"settings": [
+{
+"type":      "header",
+"content":   "Hero Settings"
+},
+{
+"type": "image_picker",
+"id": "hero_background",
+"label": "Hero Background"
+},
+{
+"type": "textarea",
+"id": "main_hero_text",
+"label": "Hero Heading"
+},
+{
+"type": "textarea",
+"id": "main_hero_decription",
+"label": "Hero Sub heading"
+},
+{
+"type":      "header",
+"content":   "CTA"
+},
+{
+"type": "text",
+"id": "main_hero_cta_text",
+"label": "CTA TEXT"
+},
+{
+"type": "url",
+"id": "main_hero_cta_link",
+"label": "CTA LINK"
+}
+]
+}
+{% endschema %}

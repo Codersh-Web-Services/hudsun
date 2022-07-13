@@ -1,0 +1,31 @@
+<div class="product-left-wrapper"><img width="100px" src="{{section.settings.image | img_url : "master"}}" alt="{{section.settings.product.featured_image.alt}}">
+<p> {{section.settings.product.title}}</p>
+</div>
+
+<div class="product-right-wrapper">
+  <span>{{section.settings.product.price | money }} - $16.99</span>
+  <button class="select-variant-btn btn"> Select a size </button>
+</div>
+{% schema %}
+  {
+    "name": "Floating footer",
+    "settings": [
+{
+"type" : "product",
+"id" : "product",
+"label" : "Product"
+},
+{
+"type" : "image_picker",
+"id" : "image",
+"label" : "Product image"
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

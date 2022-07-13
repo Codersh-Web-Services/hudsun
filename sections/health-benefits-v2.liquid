@@ -1,0 +1,164 @@
+<section class="health-benefits types-of-pecans">
+
+   <div class="types-of-pecans-desktop">
+      <div class="two-sec-bg position-relative">
+         <div class="container-fluid">
+            <div class="row align-items-center">
+               <div class="col-lg-6 p-0">
+                  <img src="{{section.settings.benefit1_img | img_url:''}}" class="img-fluid">
+               </div>
+               <div class="col-lg-6 cten p-0">
+                  <div class="ctent-wrap">
+                     <h3>{{section.settings.benefit1_title}}</h3>
+                     <p>{{section.settings.benefit1_desc}}</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row align-items-center">
+               <div class="col-lg-6 cten p-0">
+                  <div class="ctent-wrap">
+                     <h3>{{section.settings.benefit2_title}}</h3>
+                     <p>{{section.settings.benefit2_desc}}</p>
+                  </div>
+               </div>
+               <div class="col-lg-6 p-0">
+                  <img src="{{section.settings.benefit2_img | img_url:''}}" class="img-fluid" alt="">
+               </div>
+            </div>
+            <div class="row align-items-center">
+               <div class="col-lg-6 p-0">
+                  <img src="{{section.settings.benefit3_img | img_url:''}}" class="img-fluid" alt="">
+               </div>
+               <div class="col-lg-6 cten p-0">
+                  <div class="ctent-wrap">
+                     <h3>{{section.settings.benefit3_title}}</h3>
+                     <p>{{section.settings.benefit3_desc}}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="types-of-pecans-mobile">
+      <div class="two-sec-bg position-relative">
+         <div class="container-fluid">
+            <div class="row align-items-center">
+               <div class="col-lg-6 p-0">
+                  <img src="{{section.settings.benefit1_img | img_url:''}}" class="img-fluid" alt="">
+               </div>
+               <div class="col-lg-6 cten p-0">
+                  <div class="ctent-wrap">
+                     <h3>{{section.settings.benefit1_title}}</h3>
+                     <p>{{section.settings.benefit1_desc}}</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row align-items-center">
+               <div class="col-lg-6 p-0">
+                  <img src="{{section.settings.benefit2_img | img_url:''}}" class="img-fluid" alt="">
+               </div>
+               <div class="col-lg-6 cten p-0">
+                  <div class="ctent-wrap">
+                     <h3>{{section.settings.benefit2_title}}</h3>
+                     <p>{{section.settings.benefit2_desc}}</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row align-items-center">
+               <div class="col-lg-6 p-0">
+                  <img src="{{section.settings.benefit3_img | img_url:''}}" class="img-fluid" alt="">
+               </div>
+               <div class="col-lg-6 cten p-0">
+                  <div class="ctent-wrap">
+                     <h3>{{section.settings.benefit3_title}}</h3>
+                     <p>{{section.settings.benefit3_desc}}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+ 
+{% schema %}
+
+  {
+  "name": "Health benefits",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "overlay_background",
+      "label": "Overlay Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_background",
+      "label": "Section Background"
+    },
+    {
+      "type": "textarea",
+      "id": "main_text",
+      "label": "Override Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "sub_text",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "header",
+      "content": "Types of benefits"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit1_img",
+      "label": "benefit 1"
+    },
+    {
+      "type": "text",
+      "id": "benefit1_title",
+      "label": "benefit 1 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit1_desc",
+      "label": "benefit 1 Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit2_img",
+      "label": "benefit 2"
+    },
+    {
+      "type": "text",
+      "id": "benefit2_title",
+      "label": "benefit 2 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit2_desc",
+      "label": "benefit 2 Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit3_img",
+      "label": "benefit 3"
+    },
+    {
+      "type": "text",
+      "id": "benefit3_title",
+      "label": "benefit 3 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit3_desc",
+      "label": "benefit 3 Description"
+    }
+  ]
+}
+
+{% endschema %}

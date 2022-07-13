@@ -1,0 +1,102 @@
+{% if product.metafields.prod_testimonial.testi_key != blank %}
+<section class="testimonial-slider-product" style="background-image:url('{{ section.settings.section_background | img_url: '' }}');">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				
+					<div class="twrap">
+						<div class="blue-trans">
+							<div class="star-icons">
+								<ul>
+									<li>
+										<i class="fas fa-star"></i>
+									</li>
+									<li>
+										<i class="fas fa-star"></i>
+									</li>
+									<li>
+										<i class="fas fa-star"></i>
+									</li>
+									<li>
+										<i class="fas fa-star"></i>
+									</li>
+									<li>
+										<i class="fas fa-star"></i>
+									</li>
+								</ul>
+							</div>
+							<div class="tcontent">
+								{{ product.metafields.prod_testimonial.testi_key }}
+							</div>
+						</div>
+
+					</div>
+				
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}
+<script>
+	$(document).ready(function(){
+	  $(".testimonial-slider-product .twrap").slick({
+	    dots: false,
+	    fade: true,
+  		cssEase: 'linear',
+	    autoplay:true, 
+	    autoplaySpeed:4000, //  Slide Delay
+	    speed:400, // Transition Speed
+	    slidesToShow:1, // Number Of Carousel
+	    slidesToScroll:1, // Slide To Move 
+	    pauseOnHover:false,
+	    arrows: true,
+	    prevArrow:"<span class='preva'><i class='fas fa-arrow-left'></i></span>",
+      	nextArrow:"<span class='nexta'><i class='fas fa-arrow-right'></i></span>",
+        responsive: [
+		    {
+		      breakpoint: 769,
+		      settings: {
+		        dots: true,
+		        arrows: false
+		      }
+		    }
+		  ]
+	  })
+	})
+</script>
+
+
+{% schema %}
+  {
+  	"name": "Testimonial Image",
+    "settings": [
+    	{
+		   "type":      "header",
+		   "content":   "Testimonial Slider"
+		},
+		{
+			"type": "image_picker",
+			"id": "section_background",
+			"label": "Section Background"
+		}	
+    ],
+    "blocks": [
+      {
+        "type": "testimonial_slides",
+        "name": "Testimonial Slides",
+        "settings": [
+        	{
+				"type": "textarea",
+				"id": "author_content",
+				"label": "Author"
+		    },
+	        {
+				"type": "textarea",
+				"id": "slide_content",
+				"label": "Testimonial Content"
+		    }
+        ]
+      }
+    ]
+  }
+{% endschema %}

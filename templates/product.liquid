@@ -1,0 +1,34 @@
+<!-- /templates/product.liquid -->
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+{% section 'product-template-custom' %}
+{% section 'testimonial-slider' %}
+{% section 'product-page-reviews' %}
+{% section 'article-product-feed' %}
+
+
+{% comment %}
+{% section 'product-recommendations-v2' %}
+{% section 'rtl-product-section' %}
+{% endcomment %}
+
+
+
+{% comment %}
+
+{% if collection %}
+  <hr class="hr--clear">
+  <div class="text-center">
+    <a href="{{ collection.url }}" class="return-link">&larr; {{ 'products.general.collection_return' | t: collection: collection.title }}</a>
+  </div>
+{% endif %}
+{% endcomment %}
+
+<section class="featured-recipes-global">
+  <div class="container">
+    {% include 'featured-recipes-global' %}
+  </div>
+</section>
+

@@ -1,0 +1,77 @@
+<section class="search-custom">
+  <div class="heading-section bg-inline" style="background-image: url({{ 'search-banner.jpg' | asset_url }});">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          {% if search.performed %}
+            {% if search.results_count == 0 %}
+                <h1 class="text-center">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
+              {% else %}
+                <h1 class="text-center">{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
+              {% endif %}
+            {% else %}
+              <h1 class="text-center">{{ 'general.search.title' | t }}</h1>
+          {% endif %}
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="results-section">
+    <div class="container">
+        {% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--page' %}
+
+        <div class="row">
+          {% if search.performed %}
+            {% for item in search.results %}
+              {% assign article_content = item.content %}
+              {% if item.object_type == 'product' %}
+                  {% assign product = item %}
+                  {% include 'product-grid-item-custom' %}
+                {% else %}
+                <div class="col-md-6 col-lg-4">
+                  <div class="col--wrapper">
+                    <div class="product-img--holder">
+                      {% comment %}
+                      <div class="article__featured-image-link bg-inline" style="background-image:url('{{ item.image | img_url: '400x400' }}');"></div>
+                      {% endcomment %}
+                        
+                        <div class="grid-item__hover"></div>
+                        <a href="{{ item.url }}" class="floatlink">
+                          <img src="{{ item.image | img_url: '400x400' }}">
+                        </a>
+                    </div>
+
+                    <div class="blog-body text-center">
+                      <div data-mh="desc-body-wocta">
+                        <h4 data-mh="prod-title">
+                          <a class="article__heading-link" href="{{ item.url }}">{{ item.title }}
+                          </a>
+                        </h4>
+                        {% if article.metafields.blog_recipe.total_time != blank %}
+                          <p class="prep-time">Total Time: {{article.metafields.blog_recipe.total_time}}</p>
+                        {% endif %}
+                        <div class="article-content">
+                          <p>
+                            {{ item.excerpt_or_content | strip_html | truncatewords: 12 }}
+                          </p>
+                        </div>
+                      </div>
+                      {% comment %}
+                      <div class="cta">
+                        <a href="{{ item.url }}" class="btn">Read more</a>
+                      </div>
+                      {% endcomment %}
+                    </div>
+                  </div>
+                  
+                  </div>
+                {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
